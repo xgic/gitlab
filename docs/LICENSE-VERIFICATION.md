@@ -70,7 +70,17 @@ The Apache 2.0 license currently in the root of the repository is the correct ch
 
 Further updates to this verification will be made if the supported use cases expand.
 
+## v1.0.0 Refresh (2026-06-23)
+
+Re-confirmed for the first stable production release (v1.0.0 per milestone #1).
+
+- Apache 2.0 remains fully suitable for the generalized production definitions, GHCR publishing, and all listed deployment/educational use cases.
+- Common practice in 2026: Many Apache 2.0 OSS projects use GHCR successfully for production container distribution with GitHub Actions (unlimited pulls for public, fine-grained permissions).
+- No changes to caveats: Upstream GitLab EE licensing is separate and user responsibility.
+
+See primary coordination for full context.
+
 ---
 
-**Coordination references**: GitLab migration (#5), Public exemplary launches (#2).  
+**Coordination references**: GitLab migration (#5), Public exemplary launches (#2), v1.0.0 milestone #1.  
 **Human verification and approval required before any remote action or merge to main.**

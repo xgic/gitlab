@@ -9,9 +9,11 @@ Use this file for distillation. Authoritative tracking lives on the GitHub platf
 - [x] Human review and LGTM of bootstrap artifacts (received)
 - [x] Platform issue creation (#1) with full body + gate sentence
 - [x] Initial commit (ccc70e3) after LGTM with detailed message + refs #1, #5, #2
-- [ ] Explicit human LGTM for `git push origin main` (first remote action)
-- [ ] Verify LICENSE-VERIFICATION completeness and any final wording tweaks
-- [ ] Expand stack with production recommendations (backup, HTTPS, resource limits, profiles)
+- [x] Explicit human LGTM for `git push origin main` (bootstrap push executed after prior LGTM; see commits)
+- [x] Verify/refresh LICENSE-VERIFICATION completeness and cross-refs for v1.0.0 (Apache 2.0 gate) — refreshed with 2026 confirmation + milestone ref
+- [ ] Populate/advance milestone v1.0.0 (#1) per new mandatory rule
+- [x] Expand production stack (backups, HTTPS/TLS, resources, profiles, full config-driven; stack/ dir) — committed
+- [x] Enhance CI/CD (GHCR, multi-platform via QEMU/Buildx, PR validation) — platforms + PR trigger
 
 ## Future / Roadmap
 
@@ -25,5 +27,11 @@ Use this file for distillation. Authoritative tracking lives on the GitHub platf
 
 - 2026-06-23: Bootstrap base set + high-level stack + CI skeleton + license gate
 - Applied public exemplary standards (AGENTS, CONTRIBUTING, docs, templates, xde direction)
+- Push executed (after LGTM)
+- Repo made PUBLIC + branch protection enabled on main (1 review + CODEOWNERS + linear history + no force/delete)
+- docs/branch-protection.md added + policy documented
+- CI workflow enhanced for PR triggers (prepares status checks)
+- Repo description + topics updated for accuracy
+- Milestone v1.0.0 (#1) confirmed on GitHub (open)
 
 **Human verification and approval required before any remote action or merge to main.**
