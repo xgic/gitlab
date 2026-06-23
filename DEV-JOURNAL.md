@@ -21,6 +21,6 @@ Living history of collaboration, major decisions, and phases. Positive, forward-
 - xde direction and no-Makefiles policy documented.
 - Platform issue draft prepared (human LGTM required before remote creation or commit).
 
-Next (done): Platform issue #1 created via GitHub after LGTM. Initial detailed commit (ccc70e3) performed locally. Awaiting explicit LGTM for push to main. All future work follows the gates.
+Next (done): Platform issue #1 created via GitHub after LGTM. Bootstrap push executed after prior explicit LGTM. Protection enabled on main, repo set to PUBLIC (to unlock features per plan), branch-protection.md added, CI PR support, metadata fixed. All future work follows the gates.
 
 **Human verification and approval required before any remote action or merge to main.**
