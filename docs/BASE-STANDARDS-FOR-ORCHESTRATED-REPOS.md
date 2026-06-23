@@ -71,6 +71,7 @@ Every public exemplary orchestrated repo must have (at minimum) the following:
     - Atomic and complete.
     - Linting/verification + docs updates in same commit where relevant.
     - Positive, constructive, forward-looking framing.
+    - **Squash related small changes**: When a high number of small related changes are made, squash them into one fully detailed Conventional Commit that documents all modifications. This rule does not apply to completely unrelated changes, which must be submitted in separate merge requests or pull requests.
     - **Initial commits in bootstraps**: Must be preceded by a platform tracking issue describing the bootstrap. The commit message must clearly identify it as the "Initial commit", state the project name and purpose, list the key files and structure introduced, describe the setup (base set, standards, xde, etc.), reference the issue, and use positive framing. Grok drafts; explicit human LGTM before committing. **Human verification and approval required before any remote action or merge to main.**
 12. **xde as the standard for container / environment orchestration tasks (no Makefiles)**:
     - `xde` is the preferred single interface.

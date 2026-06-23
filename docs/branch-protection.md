@@ -50,6 +50,8 @@ Test the flow:
 4. Obtain the required review (human LGTM).
 5. Merge (using rebase or squash to preserve linear history).
 
+**Squash rule for related changes**: When a high number of small related changes are made (e.g. multiple coordinated doc updates), squash them into one fully detailed Conventional Commit that documents all modifications. Unrelated changes must use separate PRs.
+
 See also:
 - [orchestration-workflow.md](orchestration-workflow.md)
 - [grok-playbooks.md](grok-playbooks.md)

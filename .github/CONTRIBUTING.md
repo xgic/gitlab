@@ -55,6 +55,8 @@ All contributions use constructive, forward-looking language.
 
 Use detailed Conventional Commits.
 
+**Squash rule for related changes**: When a high number of small related changes are made, squash them into one fully detailed Conventional Commit that documents all modifications. This rule does not apply to completely unrelated changes, which must be submitted in separate merge requests or pull requests.
+
 Example:
 ```
 feat(stack): add external Postgres service with healthcheck and persistent volume

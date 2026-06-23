@@ -23,6 +23,7 @@ These principles have been established to maximize effectiveness and maintain a 
   - Use sensible Conventional Commit messages with clear scopes.
   - Detailed commit messages for initial/bootstrap commits: describe files introduced, setup, and reference the platform tracking issue.
   - Clean history before pushing or merging to main (interactive rebase/squash where appropriate).
+  - **Squash related small changes**: When a high number of small related changes are made, squash them into one fully detailed Conventional Commit that documents all modifications. This rule does not apply to completely unrelated changes, which must be submitted in separate merge requests or pull requests.
   - **Mandatory human review gate**: No push or merge to `main` without explicit human verification and approval. See the human review gate section.
   - I have autonomy to prepare branches and commits locally following these guidelines.
 
