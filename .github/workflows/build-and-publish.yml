@@ -60,7 +60,7 @@ jobs:
         # High-level: In a full implementation this would build a thin optimized
         # wrapper or publish the Compose definitions as an OCI artifact.
         # For initial bootstrap we demonstrate the GHCR path and version pinning.
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v7
         with:
           context: .
           file: ./Dockerfile
