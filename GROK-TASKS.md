@@ -6,9 +6,10 @@ Use this file for distillation. Authoritative tracking lives on the GitHub platf
 
 ## Next / In Progress
 
-- [ ] Human review and LGTM of bootstrap artifacts
-- [ ] Platform issue creation for the initial public exemplary bootstrap (full body + gate sentence)
-- [ ] Initial commit after LGTM (detailed Conventional Commit message describing files + setup + refs)
+- [x] Human review and LGTM of bootstrap artifacts (received)
+- [x] Platform issue creation (#1) with full body + gate sentence
+- [x] Initial commit (ccc70e3) after LGTM with detailed message + refs #1, #5, #2
+- [ ] Explicit human LGTM for `git push origin main` (first remote action)
 - [ ] Verify LICENSE-VERIFICATION completeness and any final wording tweaks
 - [ ] Expand stack with production recommendations (backup, HTTPS, resource limits, profiles)
 
