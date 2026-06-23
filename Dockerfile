@@ -32,6 +32,10 @@ LABEL org.opencontainers.image.licenses="Apache-2.0"
 # Keep this layer minimal; heavy customization belongs in omnibus config
 # or the Compose orchestration layer.
 
+# Example resource / security notes (apply at runtime via compose or orchestrator)
+# - Use read-only root where possible
+# - Drop capabilities in compose if overriding entrypoint
+
 # Healthcheck (example — adjust for your GitLab version and setup)
 # HEALTHCHECK --interval=30s --timeout=10s --start-period=300s --retries=3 \
 #   CMD curl -f http://localhost/-/health || exit 1

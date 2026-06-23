@@ -1,0 +1,50 @@
+# =============================================
+# XGIC GitLab — Production Profile Override
+# Include with: docker compose -f docker-compose.yml -f stack/docker-compose.prod.yml --profile prod up
+#
+# Adds stronger production defaults, resource hints, and notes.
+# Configuration-driven via .env .
+#
+# Coordination: #5, #2, v1.0.0 (#1)
+# Human verification and approval required before any remote action or merge to main.
+# =============================================
+
+services:
+  gitlab:
+    # Stronger prod restart and limits (override base as needed)
+    deploy:
+      resources:
+        limits:
+          cpus: '4'
+          memory: 8G
+    # Production HTTPS example (set GITLAB_EXTERNAL_URL=https://... in .env)
+    # Mount custom certs or use Omnibus letsencrypt config
+    # environment:
+    #   GITLAB_OMNIBUS_CONFIG: |
+    #     external_url 'https://gitlab.example.com'
+    #     letsencrypt['enable'] = true
+
+  postgres:
+    # Production Postgres recommendations (tune for your workload)
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 4G
+    command: >
+      postgres
+      -c shared_buffers=256MB
+      -c max_connections=200
+
+  redis:
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 1G
+
+# Production notes (not enforced by compose):
+# - Backups: Run `gitlab-backup create` in gitlab container periodically; store GITLAB_BACKUPS_DIR offsite.
+# - Monitoring: Add Prometheus/Grafana sidecars or use GitLab's built-in.
+# - Scaling: For true HA consider Kubernetes or GitLab Geo, not single Compose.
+# - Security: Firewall ports, use secrets management for .env, regular updates of pinned versions.

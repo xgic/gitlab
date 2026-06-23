@@ -43,7 +43,7 @@ cp .env.example .env
 docker compose up -d
 ```
 
-See `docs/architecture.md` and the Compose file comments for production recommendations (volumes, networking, backup, HTTPS termination, etc.).
+See `docs/architecture.md`, the Compose file comments, and `stack/` for production recommendations (backups, HTTPS/TLS, resource limits, profiles, external Postgres/Redis, etc.).
 
 **Important**: GitLab EE requires a valid license for production use. The Apache 2.0 license in this repository covers only the orchestration definitions and does not grant rights to GitLab EE itself.
 

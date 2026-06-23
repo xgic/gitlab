@@ -29,8 +29,9 @@ services:
     environment:
       GITLAB_OMNIBUS_CONFIG: |
         external_url '${GITLAB_EXTERNAL_URL:-http://localhost:8929}'
-        # Add further production omnibus settings here (unicorn/puma workers, etc.)
-        # Example: gitlab_rails['time_zone'] = 'UTC'
+        # Production omnibus settings (add as needed)
+        # gitlab_rails['time_zone'] = 'UTC'
+        # gitlab_rails['backup_path'] = '/var/opt/gitlab/backups'
       TZ: ${TZ:-UTC}
     ports:
       - "8929:80"
@@ -39,14 +40,31 @@ services:
       - ${GITLAB_DATA_DIR:-./gitlab-data}:/var/opt/gitlab
       - ${GITLAB_LOGS_DIR:-./gitlab-logs}:/var/log/gitlab
       - ${GITLAB_CONFIG_DIR:-./gitlab-config}:/etc/gitlab
+      # Backup volume (recommended for production gitlab-backup rake tasks)
+      - ${GITLAB_BACKUPS_DIR:-./gitlab-backups}:/var/opt/gitlab/backups
     depends_on:
       postgres:
         condition: service_healthy
-      # redis:
-      #   condition: service_started
-    # healthcheck can be added once the image supports it reliably
-    # For production: add shm_size, ulimits, and resource limits
+      redis:
+        condition: service_started
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/-/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 300s
     shm_size: '256m'
+    # Production resource recommendations (adjust per load)
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 4G
+        reservations:
+          cpus: '1'
+          memory: 2G
+    # For HTTPS production: set external_url to https://... and provide certs via volume or Omnibus config
+    # Recommended: Use external reverse proxy (e.g. Traefik/Nginx) or GitLab's built-in Let's Encrypt
 
   postgres:
     image: postgres:${POSTGRES_VERSION:-16}
@@ -65,19 +83,23 @@ services:
       retries: 5
     # For production: add resource limits and consider dedicated network
 
-  # Redis is commonly used for GitLab caching / sidekiq in production setups.
-  # Uncomment and wire into GITLAB_OMNIBUS_CONFIG when enabling.
-  # redis:
-  #   image: redis:${REDIS_VERSION:-7}-alpine
-  #   container_name: gitlab-redis
-  #   restart: unless-stopped
-  #   volumes:
-  #     - ./redis-data:/data
-  #   healthcheck:
-  #     test: ["CMD", "redis-cli", "ping"]
-  #     interval: 10s
-  #     timeout: 3s
-  #     retries: 5
+  redis:
+    image: redis:${REDIS_VERSION:-7}-alpine
+    container_name: gitlab-redis
+    restart: unless-stopped
+    volumes:
+      - ${REDIS_DATA_DIR:-./redis-data}:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+    # Always included (lightweight and recommended for GitLab caching/sidekiq)
+    # Production: add resource limits as needed
+
+# Profiles for environment-specific stacks
+# `docker compose up`          : gitlab + postgres (quick start)
+# `docker compose --profile prod up` : includes redis + full prod recommendations
 
 networks:
   default:
