@@ -28,6 +28,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
@@ -64,12 +67,11 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          platforms: linux/amd64,linux/arm64
           build-args: |
             GITLAB_VERSION=${{ github.event.inputs.gitlab_version || '17.11.0-ee.0' }}
-          # Multi-platform can be added once tested:
-          # platforms: linux/amd64,linux/arm64
 
       - name: Summary
         run: |
-          echo "Image published to GHCR (when on tag/workflow_dispatch and not PR)."
-          echo "See coordination #5 (migration) and #2 (public exemplary)."
+          echo "Build validated for PRs; published to GHCR on tags/dispatch (multi-platform)."
+          echo "See coordination #5 (migration) and #2 (public exemplary), v1.0.0 milestone #1."

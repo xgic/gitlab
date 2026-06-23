@@ -10,10 +10,10 @@ Use this file for distillation. Authoritative tracking lives on the GitHub platf
 - [x] Platform issue creation (#1) with full body + gate sentence
 - [x] Initial commit (ccc70e3) after LGTM with detailed message + refs #1, #5, #2
 - [x] Explicit human LGTM for `git push origin main` (bootstrap push executed after prior LGTM; see commits)
-- [ ] Verify/refresh LICENSE-VERIFICATION completeness and cross-refs for v1.0.0 (Apache 2.0 gate)
+- [x] Verify/refresh LICENSE-VERIFICATION completeness and cross-refs for v1.0.0 (Apache 2.0 gate) — refreshed with 2026 confirmation + milestone ref
 - [ ] Populate/advance milestone v1.0.0 (#1) per new mandatory rule
-- [ ] Expand production stack (backups, HTTPS/TLS, resources, profiles, full config-driven; stack/ dir)
-- [ ] Enhance CI/CD (GHCR, multi-platform, PR validation for status checks)
+- [x] Expand production stack (backups, HTTPS/TLS, resources, profiles, full config-driven; stack/ dir) — committed
+- [x] Enhance CI/CD (GHCR, multi-platform via QEMU/Buildx, PR validation) — platforms + PR trigger
 
 ## Future / Roadmap
 
