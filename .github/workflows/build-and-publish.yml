@@ -1,0 +1,73 @@
+name: Build and Publish GitLab Stack Image
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      gitlab_version:
+        description: 'GitLab EE version pin (e.g. 17.11.0-ee.0)'
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+  packages: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ghcr.io/${{ github.repository }}/gitlab-ee
+          tags: |
+            type=ref,event=branch
+            type=ref,event=pr
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=raw,value=latest,enable={{is_default_branch}}
+          labels: |
+            org.opencontainers.image.title=XGIC GitLab EE Stack
+            org.opencontainers.image.description=Generalized production GitLab EE Compose stack
+
+      - name: Build and push (example production image or reference)
+        # High-level: In a full implementation this would build a thin optimized
+        # wrapper or publish the Compose definitions as an OCI artifact.
+        # For initial bootstrap we demonstrate the GHCR path and version pinning.
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./Dockerfile
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          build-args: |
+            GITLAB_VERSION=${{ github.event.inputs.gitlab_version || '17.11.0-ee.0' }}
+          # Multi-platform can be added once tested:
+          # platforms: linux/amd64,linux/arm64
+
+      - name: Summary
+        run: |
+          echo "Image published to GHCR (when on tag/workflow_dispatch and not PR)."
+          echo "See coordination #5 (migration) and #2 (public exemplary)."

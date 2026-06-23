@@ -1,0 +1,87 @@
+# =============================================
+# XGIC GitLab — Optimized Production Compose Stack
+# GitLab EE + PostgreSQL + supporting services
+#
+# This is a generalized, configuration-driven definition.
+# Version pins and external services recommended for production.
+#
+# Usage:
+#   cp .env.example .env && $EDITOR .env
+#   docker compose config   # validate
+#   docker compose up -d
+#
+# For container / environment tasks prefer `xde` (see AGENTS.md).
+# No Makefiles are used in this project.
+#
+# Coordination: #5 (migration), #2 (public exemplary)
+# Human verification and approval required before any remote action or merge to main.
+# =============================================
+
+name: xgic-gitlab
+
+services:
+  gitlab:
+    # Official GitLab EE image — always pin a specific version for production
+    image: gitlab/gitlab-ee:${GITLAB_VERSION:-17.11.0-ee.0}
+    container_name: gitlab
+    restart: unless-stopped
+    hostname: gitlab
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url '${GITLAB_EXTERNAL_URL:-http://localhost:8929}'
+        # Add further production omnibus settings here (unicorn/puma workers, etc.)
+        # Example: gitlab_rails['time_zone'] = 'UTC'
+      TZ: ${TZ:-UTC}
+    ports:
+      - "8929:80"
+      - "2224:22"
+    volumes:
+      - ${GITLAB_DATA_DIR:-./gitlab-data}:/var/opt/gitlab
+      - ${GITLAB_LOGS_DIR:-./gitlab-logs}:/var/log/gitlab
+      - ${GITLAB_CONFIG_DIR:-./gitlab-config}:/etc/gitlab
+    depends_on:
+      postgres:
+        condition: service_healthy
+      # redis:
+      #   condition: service_started
+    # healthcheck can be added once the image supports it reliably
+    # For production: add shm_size, ulimits, and resource limits
+    shm_size: '256m'
+
+  postgres:
+    image: postgres:${POSTGRES_VERSION:-16}
+    container_name: gitlab-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-gitlabhq_production}
+      POSTGRES_USER: ${POSTGRES_USER:-gitlab}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-CHANGE_ME_STRONG}
+    volumes:
+      - ${POSTGRES_DATA_DIR:-./postgres-data}:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-gitlab} -d ${POSTGRES_DB:-gitlabhq_production}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    # For production: add resource limits and consider dedicated network
+
+  # Redis is commonly used for GitLab caching / sidekiq in production setups.
+  # Uncomment and wire into GITLAB_OMNIBUS_CONFIG when enabling.
+  # redis:
+  #   image: redis:${REDIS_VERSION:-7}-alpine
+  #   container_name: gitlab-redis
+  #   restart: unless-stopped
+  #   volumes:
+  #     - ./redis-data:/data
+  #   healthcheck:
+  #     test: ["CMD", "redis-cli", "ping"]
+  #     interval: 10s
+  #     timeout: 3s
+  #     retries: 5
+
+networks:
+  default:
+    name: xgic-gitlab-net
+
+# Volumes are declared via bind mounts in this example for simplicity.
+# For named volumes in some environments, switch the paths in .env and compose.

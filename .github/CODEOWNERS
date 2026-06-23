@@ -1,0 +1,11 @@
+# CODEOWNERS for xgic/gitlab
+#
+# Core paths require review from listed owners before merging to protected branches.
+# See branch protection and AGENTS.md for human gate details.
+
+/AGENTS.md                  @xgic
+/docs/                      @xgic
+/.github/                   @xgic
+/docker-compose*.yml        @xgic
+/config/                    @xgic
+/README.md                  @xgic

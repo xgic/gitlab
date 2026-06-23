@@ -1,0 +1,31 @@
+# =============================================
+# Example gitlab.rb for XGIC GitLab production stack
+# Place custom omnibus configuration here or inject via GITLAB_OMNIBUS_CONFIG
+# in the compose environment.
+#
+# See official GitLab docs for the full surface.
+# https://docs.gitlab.com/omnibus/settings/configuration.html
+#
+# This repo provides the orchestration layer only.
+# GitLab EE licensing is required separately for production use.
+# =============================================
+
+external_url 'https://gitlab.example.com'
+
+# Example production settings (uncomment and tune)
+# gitlab_rails['time_zone'] = 'UTC'
+# puma['worker_processes'] = 2
+# sidekiq['concurrency'] = 10
+
+# Database (when using external Postgres via compose)
+# gitlab_rails['db_adapter'] = 'postgresql'
+# gitlab_rails['db_encoding'] = 'unicode'
+# gitlab_rails['db_host'] = 'postgres'
+# gitlab_rails['db_port'] = 5432
+# gitlab_rails['db_database'] = 'gitlabhq_production'
+# gitlab_rails['db_username'] = 'gitlab'
+# gitlab_rails['db_password'] = '<see .env>'
+
+# Backup settings, monitoring, etc. as needed.
+
+# Human verification and approval required before any remote action or merge to main.
