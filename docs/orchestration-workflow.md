@@ -10,6 +10,7 @@ This document describes the day-to-day process for working in the repository.
 - Short-lived branches only.
 - All integration via Pull Requests.
 - Detailed Conventional Commits.
+- **Squash related small changes**: When a high number of small related changes are made, squash them into one fully detailed Conventional Commit that documents all modifications. This rule does not apply to completely unrelated changes, which must be submitted in separate merge requests or pull requests.
 - Update documentation and AGENTS.md as part of the same change when the model or process evolves.
 - Use `xde` (preferred) or validated Compose commands for any container / environment work. No Makefiles.
 - **Human verification and approval required before any remote action or merge to main.**

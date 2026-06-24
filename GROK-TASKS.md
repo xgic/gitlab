@@ -34,4 +34,8 @@ Use this file for distillation. Authoritative tracking lives on the GitHub platf
 - Repo description + topics updated for accuracy
 - Milestone v1.0.0 (#1) confirmed on GitHub (open)
 
+- [x] Add Rule Clarification issue (#7) and PR (#9) - rule added to 5 files via squashed commit on feature branch
+- [x] Enhance branch protection issue (#8) + applied (enforce_admins true + status checks for build-and-push)
+- [ ] Update branch-protection.md and tracking with final links (in PR)
+
 **Human verification and approval required before any remote action or merge to main.**

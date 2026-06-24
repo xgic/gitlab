@@ -16,9 +16,9 @@ Branch protection is enabled on `main` with the following rules (via GitHub bran
 - Do not allow deletions
 - Require conversation resolution before merging (recommended)
 
-Enforce admins: disabled (allows emergency bypass by admins when necessary).
+Enforce admins: enabled (true) — direct changes to main are prevented; emergency bypass only via documented admin procedures.
 
-Status checks: Not yet required (the current workflows are primarily tag- and dispatch-triggered). PR-triggered validation jobs will be added, at which point required status checks will be configured.
+Status checks: Required for "build-and-push" (strict: branches must be up to date before merging). The CI job now runs on all PRs to main (compose validation + multi-platform build test).
 
 ## How Protection Supports Our Process
 
@@ -49,6 +49,8 @@ Test the flow:
 3. Push and open PR.
 4. Obtain the required review (human LGTM).
 5. Merge (using rebase or squash to preserve linear history).
+
+**Squash rule for related changes**: When a high number of small related changes are made (e.g. multiple coordinated doc updates), squash them into one fully detailed Conventional Commit that documents all modifications. Unrelated changes must use separate PRs.
 
 See also:
 - [orchestration-workflow.md](orchestration-workflow.md)
