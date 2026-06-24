@@ -22,7 +22,7 @@ name: xgic-gitlab
 services:
   gitlab:
     # Official GitLab EE image — always pin a specific version for production
-    image: gitlab/gitlab-ee:${GITLAB_VERSION:-17.11.0-ee.0}
+    image: gitlab/gitlab-ee:${GITLAB_VERSION:-18.11.6-ee.0}
     container_name: gitlab
     restart: unless-stopped
     hostname: gitlab

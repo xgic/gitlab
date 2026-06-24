@@ -30,6 +30,10 @@ This repository is the home for high-quality, reusable definitions that make it 
 - AWS (EC2, ECS, EKS) and other cloud providers
 - Educational, tutorial, and white-paper reuse
 
+## v1.0.0 Release
+
+v1.0.0 is the first stable production release. The reference image is published to GHCR on tag `v1.0.0`.
+
 ## Quick Start (Compose)
 
 ```bash
@@ -44,6 +48,8 @@ docker compose up -d
 ```
 
 See `docs/architecture.md`, the Compose file comments, and `stack/` for production recommendations (backups, HTTPS/TLS, resource limits, profiles, external Postgres/Redis, etc.).
+
+The GHCR image for v1.0.0: `ghcr.io/xgic/gitlab/gitlab-ee:v1.0.0` (and semver tags).
 
 **Important**: GitLab EE requires a valid license for production use. The Apache 2.0 license in this repository covers only the orchestration definitions and does not grant rights to GitLab EE itself.
 
