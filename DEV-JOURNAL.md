@@ -46,4 +46,12 @@ Next: Human LGTM on milestone update draft / further remote (if any); full v1.0.
 - Updated docs/branch-protection.md for new config
 - All per slices, with gate sentence, refs #5 #2, human LGTM before remotes. Strict no direct main.
 
-**Human verification and approval required before any remote action or merge to main.**
+**2026-06-24 — Full current rules propagation (LGTM on draft, PR #10 created)**
+
+- Audited and updated key docs to include all current rules: hard security, human review gate (full/short), attribution @username, squash small changes, xde, professional tone (no **Positive update:**), platform-native (drafts with gate, gh create after LGTM), full artifacts (assignments @xgic, labels, milestones if needed), ruleset high-level only in branch-protection.md, etc.
+- branch-protection.md updated for current ruleset (high-level, no internal details).
+- PR #10 created (https://github.com/xgic/gitlab/pull/10) for human UI review/approval before merge.
+- Local tracking updated on feature branch.
+- All positive, professional, scoped to public repo, refs #5/#2, gate followed.
+
+Follow the mandatory human review gate before any remote action or merge to main — see AGENTS.md and BASE-STANDARDS-FOR-ORCHESTRATED-REPOS.md.
