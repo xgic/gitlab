@@ -18,7 +18,7 @@
 # Human verification and approval required before any remote action or merge to main.
 # =============================================
 
-ARG GITLAB_VERSION=17.11.0-ee.0
+ARG GITLAB_VERSION=17.11.0-ee.0  # v1.0.0 release pin
 
 FROM gitlab/gitlab-ee:${GITLAB_VERSION}
 
