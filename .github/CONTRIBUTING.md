@@ -49,7 +49,7 @@ All contributions use constructive, forward-looking language.
 - All work occurs on short-lived feature branches.
 - Changes are integrated exclusively via Pull Requests.
 - Branch protection requires at least one human approval + passing automated checks before merge.
-- **Human verification and approval required before any remote action or merge to main.**
+- Follow the mandatory human review gate before any remote action or merge to main — see AGENTS.md and BASE-STANDARDS-FOR-ORCHESTRATED-REPOS.md.
 
 ## Commit Message Convention
 
@@ -74,6 +74,10 @@ Refs: #5, #2
 - Keep commits atomic and complete (full change + tests/verification + docs).
 
 **Bootstrap / initial commits**: Must follow the rules in `docs/BASE-STANDARDS-FOR-ORCHESTRATED-REPOS.md`. A platform tracking issue is created first. The commit message describes the full setup, references the issue, and uses positive framing. Human LGTM is required before the commit.
+
+- **Attribution**: Use actual @username for specific platform actions in docs/PRs/issues.
+- Use professional language. Avoid labels like "**Positive update:**". Do not reference ruleset bypass details unless targeting rulesets.
+- **Full artifacts**: assignments (@xgic), labels, milestones (for releases/major/epics/coordinated; not all small).
 
 ## Pull Request Guidelines
 

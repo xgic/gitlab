@@ -84,8 +84,12 @@ Every public exemplary orchestrated repo must have (at minimum) the following:
     - Mandatory human verification/approval on every remote action and before anything lands on main.
     - All PRs require human code review in the GitHub interface.
     - Update AGENTS.md, GROK-TASKS.md, DEV-JOURNAL.md, and playbooks as part of relevant changes.
-    - **Platform-native tracking**: Draft issues/PRs fully in Grok (complete body with context, plan, checklists, exact gate sentence), receive explicit human LGTM, then create using native tools. Local lightweight files are for high-level distillation only.
+    - **Documentation Professionalism**: Use professional language only. Avoid labels like "**Positive update:**". Do not reference ruleset bypass details unless the changes specifically target the rulesets.
+    - **Platform-native tracking**: Draft issues/PRs fully in Grok (complete body with context, plan, checklists, exact gate sentence), receive explicit human LGTM, then create using native tools (gh after search_tool for MCP schemas if used). Local lightweight files are for high-level distillation only.
+    - **Full Artifacts**: Include assignments (e.g. @xgic), consistent labels (type/, priority/, status/, area/, review/, grok/), milestones (for releases, major/epics/coordinated work; not for all small items).
     - Reference primary coordination (e.g. migration #5, public exemplary launches #2) from artifacts.
+
+- **Milestones**: Create draft milestones for releases, major work, epics, or coordinated efforts per platform best practices and semantic versioning. Every release must pass tests, receive approvals, include completed professional artifacts. Human LGTM before remote creation.
 
 ---
 

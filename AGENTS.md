@@ -31,6 +31,12 @@ These principles have been established to maximize effectiveness and maintain a 
 
 - **Positive, forward-looking mindset.** Discussions and documentation focus on where we are going and how to deliver excellent, production-grade GitLab experiences.
 
+- **Documentation Professionalism & Security**:
+  - Use professional language in all artifacts, issues, and PRs. Avoid labels like "**Positive update:**".
+  - Do not reference ruleset bypass details unless the work specifically targets the rulesets.
+
+- **Attribution**: When describing specific human actions performed in the GitHub platform (e.g., merge, approval, review), use the actual username (e.g., "merged by @xgic via GitHub web UI").
+
 These principles take precedence. When in doubt, refer back to this section.
 
 ---
@@ -168,6 +174,11 @@ See `docs/orchestration-workflow.md` and the xde reference in the sibling xde pr
 - Ready for sharing: draft the complete Markdown body here first.
 - After explicit review and LGTM: proceed to platform creation (with gate language embedded).
 - All merges require human platform review + approval.
+
+**Full Artifact Requirements (Platform-native)**:
+- Use assignments (e.g., @xgic), consistent labels (type/, priority/, status/, area/, review/, grok/), milestones (for releases, major/epics/coordinated work — not for all small changes).
+- Drafts must carry the exact gate sentence where relevant.
+- Human performs review/approval in the GitHub web UI.
 
 ---
 

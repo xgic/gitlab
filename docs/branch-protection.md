@@ -6,19 +6,18 @@ This aligns with the base standards in [docs/BASE-STANDARDS-FOR-ORCHESTRATED-REP
 
 ## Current Protection (Applied)
 
-Branch protection is enabled on `main` with the following rules (via GitHub branch protection):
+Branch protection is enforced on `main` via the active GitHub ruleset "main-protection-with-owner-bypass":
 
-- Require a pull request before merging (minimum 1 approving review)
-- Dismiss stale pull request approvals when new commits are pushed
-- Require review from Code Owners (enforced via [CODEOWNERS](../.github/CODEOWNERS))
+- Require a pull request before merging (1 approving review, dismiss stale reviews on push, require code owner review, allowed merge methods: merge/squash/rebase)
 - Require linear history
-- Do not allow force pushes
-- Do not allow deletions
-- Require conversation resolution before merging (recommended)
+- Deletion and non-fast-forward (no deletions or force pushes)
+- Required status checks (strict policy for "build-and-push")
 
-Enforce admins: enabled (true) — direct changes to main are prevented; emergency bypass only via documented admin procedures.
+Owner bypass is configured for the repository owner as part of the ruleset.
 
-Status checks: Required for "build-and-push" (strict: branches must be up to date before merging). The CI job now runs on all PRs to main (compose validation + multi-platform build test).
+Status checks: "build-and-push" is required (strict).
+
+This uses GitHub Rulesets (preferred on public repos) for flexible enforcement.
 
 ## How Protection Supports Our Process
 
