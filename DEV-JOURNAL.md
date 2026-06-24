@@ -54,4 +54,15 @@ Next: Human LGTM on milestone update draft / further remote (if any); full v1.0.
 - Local tracking updated on feature branch.
 - All positive, professional, scoped to public repo, refs #5/#2, gate followed.
 
+**2026-06-24 — Prepare for GHCR v1.0.0 release (post PR #10 merge)**
+
+- Created short-lived branch for release prep.
+- Minor updates to version references and comments for v1.0.0 in .env.example, Dockerfile, workflow.
+- Added CHANGELOG.md with professional v1.0.0 entry.
+- Updated README with GHCR image info for v1.0.0.
+- Workflow confirmed ready (triggers on v* tags for GHCR publish).
+- Local tracking updated.
+- All positive, professional; short gate ref.
+- Next: human LGTM on release draft, then gh release create / tag.
+
 Follow the mandatory human review gate before any remote action or merge to main — see AGENTS.md and BASE-STANDARDS-FOR-ORCHESTRATED-REPOS.md.
