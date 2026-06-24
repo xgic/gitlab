@@ -22,7 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Professional tone and short gate references across docs.
 
 ### Notes
-- First stable v1.0.0 release.
+- First stable v1.0.0 release, pinned to gitlab/gitlab-ee:18.11.6-ee.0
 - Reference image published to GHCR.
 - See PR #10 for rules propagation, PR #9 for initial clarifications.
 - Milestone: https://github.com/xgic/gitlab/milestone/1

@@ -57,8 +57,9 @@ Next: Human LGTM on milestone update draft / further remote (if any); full v1.0.
 **2026-06-24 — Prepare for GHCR v1.0.0 release (post PR #10 merge)**
 
 - Created short-lived branch for release prep.
+- Pinned Docker image to gitlab/gitlab-ee:18.11.6-ee.0 for the 1.0.0 release (updated .env.example, Dockerfile, docker-compose.yml, workflow).
 - Minor updates to version references and comments for v1.0.0 in .env.example, Dockerfile, workflow.
-- Added CHANGELOG.md with professional v1.0.0 entry.
+- Added CHANGELOG.md with professional v1.0.0 entry (notes the EE pin).
 - Updated README with GHCR image info for v1.0.0.
 - Workflow confirmed ready (triggers on v* tags for GHCR publish).
 - Local tracking updated.

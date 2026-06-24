@@ -12,7 +12,7 @@ Use this file for distillation. Authoritative tracking lives on the GitHub platf
 - [x] Explicit human LGTM for `git push origin main` (bootstrap push executed after prior LGTM; see commits)
 - [x] Verify/refresh LICENSE-VERIFICATION completeness and cross-refs for v1.0.0 (Apache 2.0 gate) — refreshed with 2026 confirmation + milestone ref
 - [x] Populate/advance milestone v1.0.0 (#1) per new mandatory rule
-- [x] Prepare for GHCR v1.0.0 release: updated pins/comments, added CHANGELOG.md, drafted release. Ready for tag.
+- [x] Prepare for GHCR v1.0.0 release: pinned to gitlab/gitlab-ee:18.11.6-ee.0, updated pins/comments, added CHANGELOG.md, drafted release. Ready for tag.
 - [x] Propagate full current rules (PR #10): updated AGENTS, BASE-STANDARDS, branch-protection (ruleset high-level), etc. LGTM on draft, PR created for human UI review.
 - [x] Expand production stack (backups, HTTPS/TLS, resources, profiles, full config-driven; stack/ dir) — committed
 - [x] Enhance CI/CD (GHCR, multi-platform via QEMU/Buildx, PR validation) — platforms + PR trigger
