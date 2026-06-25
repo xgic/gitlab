@@ -22,6 +22,7 @@
 - [ ] Documentation (README, architecture, playbooks) updated where user-facing
 - [ ] `.github/` templates and AGENTS.md considered for updates
 - [ ] No private details or leakage introduced (Hard Security Rule)
+- [ ] Sanitization enforced: no private issue numbers (#5, #2 etc.), private URLs, or direct private coordination refs; only high-level descriptive text used
 
 ## Checklist
 
@@ -29,7 +30,7 @@
 - [ ] I have performed a self-review
 - [ ] I have made corresponding documentation updates
 - [ ] Changes generate no new warnings or obvious security issues
-- [ ] Related coordination issues referenced (#5, #2 where applicable)
+- [ ] Related high-level coordination references used (descriptive text only; no private issue numbers)
 
 ## AI Assistance
 
@@ -39,6 +40,6 @@
 
 ## Related Issues
 
-<!-- e.g. Closes #123 or Refs #5 (migration), #2 (public exemplary) -->
+<!-- e.g. Closes #123 or high-level coordination reference for the GitLab migration effort and public exemplary launches (sanitized, descriptive text only) -->
 
 **Human verification and approval required before any remote action or merge to main.**

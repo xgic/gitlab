@@ -46,7 +46,7 @@ The stack supports:
 
 ## Coordination
 
-This architecture directly supports the GitLab migration effort (#5) and serves as the public exemplary implementation (#2).
+This architecture directly supports coordinating the GitLab migration effort and serves as the public exemplary implementation.
 
 **Human verification and approval required before any remote action or merge to main.**
 
