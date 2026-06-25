@@ -35,6 +35,13 @@ These principles have been established to maximize effectiveness and maintain a 
   - Use professional language in all artifacts, issues, and PRs. Avoid labels like "**Positive update:**".
   - Do not reference ruleset bypass details unless the work specifically targets the rulesets.
 
+- **Status Reporting (Mandatory)**:
+  - Use exact Session ID "XGIC GitLab" in all reports and documentation.
+  - Respond to "session status report" / "generate status report" (or equivalent triggers) by writing `.xgic/grok-build/status-report.md` using the canonical template from XGIC Foundation (public/sanitized).
+  - `.xgic/` must be in `.gitignore` (never commit Grok Build status reports or local coordination artifacts).
+
+- **Attribution**: When describing specific human actions performed in the GitHub platform (e.g., merge, approval, review), use the actual username (e.g., "merged by @xgic via GitHub web UI").
+
 - **Attribution**: When describing specific human actions performed in the GitHub platform (e.g., merge, approval, review), use the actual username (e.g., "merged by @xgic via GitHub web UI").
 
 These principles take precedence. When in doubt, refer back to this section.

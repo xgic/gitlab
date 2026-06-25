@@ -65,6 +65,8 @@ Every public exemplary orchestrated repo must have (at minimum) the following:
    - `DEV-JOURNAL.md`
    - `GROK-TASKS.md`
 10. **.gitignore**: Comprehensive (secrets, env, runtime data volumes, AI local overrides, Python caches, editor noise, etc.). Model after reference public patterns.
+   - **Mandatory**: Include `.xgic/` (temporary Grok Build status reports and coordination artifacts). Never commit `.xgic/`.
+   - Support for mandatory session status reports using Session ID "XGIC GitLab", saved to `.xgic/grok-build/status-report.md` using the public template. Document triggers in AGENTS.md.
 11. **Commit discipline & culture**:
     - Detailed Conventional Commits: `<type>(<scope>): <short imperative subject>`.
     - Body explains the change and "why".
