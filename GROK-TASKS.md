@@ -43,6 +43,6 @@ Use this file for distillation. Authoritative tracking lives on the GitHub platf
 - [x] Update branch-protection.md and tracking with final links (PRs #9/#10/#11, issues #7/#8; enforcement history section; verified via gh api on chore/sync-protection-tracking-links)
 - [x] PR #12 reviewed, approved, and merged by @xgic via GitHub web UI (https://github.com/xgic/gitlab/pull/12, merge commit 51f5684). Tracking sync and updates landed on main. Full rules propagation complete.
 - [x] Enforce mandatory sanitization + Session ID "XGIC GitLab" (chore/enforce-mandatory-sanitization): removed all private coordination refs, replaced with high-level text. Added full rule + playbook + checklist. LGTM received; PR #13 created and merged by @xgic via GitHub web UI (merge commit 321a984).
-- [x] Fix CI build arg parsing (chore/fix-docker-build-arg-parsing): prevent invalid image ref by isolating comments and adding version validation. LGTM; PR #14 created.
+- [x] Fix CI build arg parsing (chore/fix-docker-build-arg-parsing): prevent invalid image ref by isolating comments and adding version validation. LGTM received; PR #14 created and merged by @xgic via GitHub web UI (merge commit d6988f5). Build issue from run 28164666182 resolved.
 
 **Human verification and approval required before any remote action or merge to main.**

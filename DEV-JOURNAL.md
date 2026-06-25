@@ -132,10 +132,13 @@ All changes prepared following strict GitHub Flow on short-lived branch. Human v
 
 **2026-06-25 — CI build fix (chore/fix-docker-build-arg-parsing)**
 
-- LGTM received; created PR #14 (https://github.com/xgic/gitlab/pull/14).
+- LGTM received; PR #14 created.
+- Reviewed, approved, and merged by @xgic via GitHub web UI.
+- Merge commit: d6988f5.
 - Root cause of build failure (run 28164666182): inline comment leaked into GITLAB_VERSION build arg → invalid FROM ref.
 - Fixed by: comment on separate line in Dockerfile; added validation step in workflow; use clean output in build-args.
 - High-level coordination references only.
 - Follows sanitization rule and makes builds robust.
+- Local main synced. All positive, professional, public scope only.
 
 Follow the mandatory human review gate before any remote action or merge to main — see AGENTS.md and BASE-STANDARDS-FOR-ORCHESTRATED-REPOS.md.
