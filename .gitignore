@@ -148,3 +148,9 @@ coverage/
 
 # Session-injected files (local only)
 prompt.md
+
+# =============================================
+# Grok Build / xAI local status reports and coordination artifacts (NEVER commit)
+# =============================================
+.xgic/
+.xgic/**
