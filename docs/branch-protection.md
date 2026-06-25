@@ -51,6 +51,17 @@ Test the flow:
 
 **Squash rule for related changes**: When a high number of small related changes are made (e.g. multiple coordinated doc updates), squash them into one fully detailed Conventional Commit that documents all modifications. Unrelated changes must use separate PRs.
 
+## Enforcement History
+
+The current protection (ruleset "main-protection-with-owner-bypass" with PR review + code owners + linear history + strict "build-and-push" status checks, owner bypass for the repository owner) and the full set of process rules were established through coordinated public work:
+
+- Issues #7 (Rule Clarification: squash related small changes into one detailed Conventional Commit) and #8 (Enhance branch protection: enforce required status checks).
+- PR #9: Implemented the squash rule via a single squashed Conventional Commit for related doc updates across key files.
+- PR #10: Propagated the full current rules (2026-06-24) — hard security, human review gate (full/short form), @username attribution, xde standard (no Makefiles), professional tone, platform-native drafting + gh creation after LGTM, full artifacts (@xgic assignments, labels, milestones for major), high-level ruleset documentation only.
+- PR #11: Implemented mandatory session status reports using exact Session ID "XGIC GitLab", `.xgic/grok-build/status-report.md` (with public template), updates to AGENTS.md / BASE-STANDARDS + .gitignore.
+
+All changes followed strict GitHub Flow, short-lived branches, detailed Conventional Commits, positive framing, and the mandatory human review gate. Human performed review and approval in the GitHub web UI prior to merge. Refs: #5 (GitLab migration), #2 (public exemplary launches).
+
 See also:
 - [orchestration-workflow.md](orchestration-workflow.md)
 - [grok-playbooks.md](grok-playbooks.md)
