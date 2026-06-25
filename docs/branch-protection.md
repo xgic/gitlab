@@ -60,7 +60,7 @@ The current protection (ruleset "main-protection-with-owner-bypass" with PR revi
 - PR #10: Propagated the full current rules (2026-06-24) — hard security, human review gate (full/short form), @username attribution, xde standard (no Makefiles), professional tone, platform-native drafting + gh creation after LGTM, full artifacts (@xgic assignments, labels, milestones for major), high-level ruleset documentation only.
 - PR #11: Implemented mandatory session status reports using exact Session ID "XGIC GitLab", `.xgic/grok-build/status-report.md` (with public template), updates to AGENTS.md / BASE-STANDARDS + .gitignore.
 
-All changes followed strict GitHub Flow, short-lived branches, detailed Conventional Commits, positive framing, and the mandatory human review gate. Human performed review and approval in the GitHub web UI prior to merge. Refs: #5 (GitLab migration), #2 (public exemplary launches).
+All changes followed strict GitHub Flow, short-lived branches, detailed Conventional Commits, positive framing, and the mandatory human review gate. Human performed review and approval in the GitHub web UI prior to merge. High-level coordination references used for the GitLab migration effort and public exemplary launches (descriptive text only per sanitization rule).
 
 See also:
 - [orchestration-workflow.md](orchestration-workflow.md)

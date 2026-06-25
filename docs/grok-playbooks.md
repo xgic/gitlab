@@ -14,9 +14,10 @@ All work uses positive framing and follows the Hard Security Rule.
 2. `git status --short`
 3. `git remote -v` ; current branch
 4. Review AGENTS.md, docs/BASE-STANDARDS-FOR-ORCHESTRATED-REPOS.md (public), architecture.md, orchestration-workflow.md, and LICENSE-VERIFICATION.md
-5. For container work: `xde --help` / `xde check` (or equivalent)
-6. Inspect current stack: `docker compose config`
-7. Summarize state to the human before proposing actions.
+5. Perform initial sanitization/leak audit (grep for private refs like coordination issue numbers, private domains).
+6. For container work: `xde --help` / `xde check` (or equivalent)
+7. Inspect current stack: `docker compose config`
+8. Summarize state to the human before proposing actions.
 
 ---
 
@@ -28,7 +29,7 @@ All work uses positive framing and follows the Hard Security Rule.
 4. Validate: `docker compose config`
 5. (Optional but recommended) Exercise with `xde` (or documented dry-run compose).
 6. Update README quick start or docs if user-facing.
-7. Conventional commit + PR with refs #5, #2 and gate sentence.
+7. Conventional commit + PR with high-level coordination references (if needed) and gate sentence.
 
 ---
 
@@ -60,8 +61,8 @@ Never use unpinned "latest" in production definitions.
 ## Playbook: Documentation Improvement
 
 1. Make the change in the relevant .md file(s).
-2. Ensure the Hard Security Rule is not violated.
-3. Cross-link coordination (#5, #2) where helpful.
+2. Ensure the Hard Security Rule and Mandatory Sanitization Rule are not violated (no private refs; high-level descriptive text only).
+3. Cross-link high-level coordination for the GitLab migration effort and public exemplary launches where helpful (descriptive text only).
 4. Update AGENTS.md if agent behavior or startup changes.
 5. Commit + PR.
 
@@ -72,9 +73,23 @@ Never use unpinned "latest" in production definitions.
 - Create the platform issue first (complete body, plan, checklist, exact gate sentence: "Human verification and approval required before any remote action or merge to main.").
 - Implement base set + high-level stack skeleton.
 - License verification gate documented.
-- All artifacts reference #5 and #2.
+- All artifacts follow sanitization: use only high-level descriptive references for the GitLab migration effort and public exemplary launches.
 - Detailed initial commit message.
 - Explicit human LGTM before commit and before any remote.
+
+## Playbook: Sanitization (Mandatory Before Every Change)
+
+1. Search the changes and entire repo for risky patterns: private issue numbers (e.g. #5, #2 in coordination context), private domains/URLs, direct private repo paths or "Refs: #X" to non-public trackers.
+2. Replace any found with high-level descriptive text:
+   - "coordinating the GitLab migration effort (high-level descriptive references only)"
+   - "public exemplary launches (high-level descriptive references only)"
+   - "High-level coordination references for the GitLab migration effort and public exemplary launches"
+3. Confirm only public GitHub numbers from *this repo* (e.g. this project's PR #12) remain.
+4. Add sanitization checklist confirmation in PR description.
+5. Run full leak audit as part of pre-PR verification.
+6. If any private refs found post-merge, immediate corrective PR required.
+
+This is a first-class security practice. See AGENTS.md and BASE-STANDARDS for the full rule.
 
 See BASE-STANDARDS and orchestration-workflow.md for full requirements.
 

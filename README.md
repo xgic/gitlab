@@ -9,8 +9,8 @@
 This repository is the home for high-quality, reusable definitions that make it straightforward to run secure, maintainable, production-grade GitLab EE across a variety of environments.
 
 **Primary coordination**:
-- GitLab migration: #5
-- Public exemplary launches: #2
+- Coordinating the GitLab migration effort (high-level descriptive references only)
+- Public exemplary launches (high-level descriptive references only)
 
 **Human verification and approval required before any remote action or merge to main.**
 
@@ -103,9 +103,9 @@ Follow GitHub Flow, Conventional Commits, the human review gate, and positive fr
 
 ## Coordination
 
-This work directly supports the top-priority GitLab migration (#5) and public exemplary repository launches (#2).
+This work directly supports coordinating the GitLab migration effort and public exemplary launches.
 
-All artifacts, issues, and PRs reference the primary coordination trackers.
+All artifacts, issues, and PRs reference high-level coordination trackers where relevant.
 
 ---
 

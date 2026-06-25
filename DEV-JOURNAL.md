@@ -104,4 +104,19 @@ All changes prepared following strict GitHub Flow on short-lived branch. Human v
 - Full current rules from 2026-06-24 plan (hard security, human review gate, attribution, squash, xde/no Makefiles, professionalism, platform-native, Session ID "XGIC GitLab", etc.) propagated and verified in public exemplary docs.
 - All positive, professional, public scope only. Architecture (official GitLab EE image + external services) clear.
 
+**2026-06-25 — Mandatory sanitization enforcement + Session ID "XGIC GitLab" (chore/enforce-mandatory-sanitization)**
+
+- Full leak audit performed (startup checklist).
+- All private coordination refs (#5, #2 and similar in migration/exemplary context) removed from public files and replaced with high-level descriptive text only:
+  - "coordinating the GitLab migration effort (high-level descriptive references only)"
+  - "public exemplary launches (high-level descriptive references only)"
+  - "High-level coordination references for the GitLab migration effort and public exemplary launches"
+- Updated: README, CHANGELOG, AGENTS.md, BASE-STANDARDS, orchestration-workflow.md, grok-playbooks.md, branch-protection.md, CONTRIBUTING.md, PULL_REQUEST_TEMPLATE.md, docker-compose.yml, stack/ files, architecture.md, LICENSE-VERIFICATION.md, etc.
+- Added/enforced full Mandatory Sanitization Rule in AGENTS and BASE-STANDARDS with examples.
+- Added sanitization step to pre-change verification, playbooks, and templates (explicit checklist item).
+- Confirmed .xgic/ in .gitignore with comment; Session ID "XGIC GitLab" already active in status reporting.
+- Only public GitHub numbers from this repo retained.
+- Prompt.md (local, gitignored) left as-is.
+- All per hard security, positive framing, human gate.
+
 Follow the mandatory human review gate before any remote action or merge to main — see AGENTS.md and BASE-STANDARDS-FOR-ORCHESTRATED-REPOS.md.

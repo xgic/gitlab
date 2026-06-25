@@ -23,7 +23,7 @@ This document describes the day-to-day process for working in the repository.
 3. Make focused changes on a feature branch.
 4. Validate (`docker compose config`, stack smoke where safe, or `xde` flows).
 5. Commit atomically with full context.
-6. Open PR using the template (include gate language and refs to #5 / #2).
+6. Open PR using the template (include gate language and high-level coordination references where relevant).
 7. Address review feedback.
 8. Human approves in GitHub UI.
 9. Merge only after approval + checks.
@@ -39,7 +39,8 @@ Per BASE-STANDARDS-FOR-ORCHESTRATED-REPOS.md:
 
 ## Pre-Change Verification
 
-- Read AGENTS.md and the Hard Security Rule.
+- Read AGENTS.md and the Hard Security Rule (including Mandatory Sanitization Rule).
+- Perform leak/sanitization scan: no private issue numbers, private URLs, or direct private coordination refs. Use high-level descriptive text only (e.g. "coordinating the GitLab migration effort").
 - Confirm no private details will be introduced.
 - For stack changes: validate compose, review pins, consider blast radius for data volumes.
 - Run relevant `xde` commands (or equivalent) with `--dry-run` first.
@@ -62,10 +63,8 @@ Changes to behavior, architecture, or process must be reflected in:
 
 ## Coordination References
 
-Primary trackers:
-- #5 GitLab migration
-- #2 Public exemplary launches
+High-level references (descriptive text only) for the GitLab migration effort and public exemplary launches may be used where relevant in artifacts. Only public GitHub issues/PRs from this repository are directly referenced.
 
-All artifacts should link back to these where relevant.
+All artifacts must follow the mandatory sanitization rule.
 
 **Human verification and approval required before any remote action or merge to main.**

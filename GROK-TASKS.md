@@ -42,5 +42,6 @@ Use this file for distillation. Authoritative tracking lives on the GitHub platf
 - [x] Enhance branch protection issue (#8) + applied (enforce_admins true + status checks for build-and-push)
 - [x] Update branch-protection.md and tracking with final links (PRs #9/#10/#11, issues #7/#8; enforcement history section; verified via gh api on chore/sync-protection-tracking-links)
 - [x] PR #12 reviewed, approved, and merged by @xgic via GitHub web UI (https://github.com/xgic/gitlab/pull/12, merge commit 51f5684). Tracking sync and updates landed on main. Full rules propagation complete.
+- [ ] Enforce mandatory sanitization + Session ID "XGIC GitLab" (this branch): removed all private coordination refs (#5/#2 etc.), replaced with high-level descriptive text only across docs, templates, comments, AGENTS, BASE-STANDARDS. Added sanitization rule + playbook + checklist. Public PRs/milestones retained.
 
 **Human verification and approval required before any remote action or merge to main.**

@@ -66,7 +66,7 @@ feat(stack): add external Postgres service with healthcheck and persistent volum
 - Update docs/architecture.md with data layer description
 - Aligns with migration requirements and public exemplary goals
 
-Refs: #5, #2
+High-level coordination references (descriptive text only)
 ```
 
 - Body explains the "what" and "why".
@@ -84,7 +84,7 @@ Refs: #5, #2
 1. Create a focused PR from your branch.
 2. Fill out the PR template completely.
 3. Ensure the PR body contains the gate sentence where required for AI-assisted work.
-4. Link related issues (e.g. "Refs #5").
+4. Link related issues (e.g. "Refs #123" or high-level coordination reference using descriptive text only).
 5. All checks must pass.
 6. Request review. A human must approve in the GitHub UI before merge.
 7. Rebase or merge main as needed for a clean history.
@@ -101,7 +101,8 @@ This is a public exemplary repository. All work follows the external-contributor
   > Human verification and approval required before any remote action or merge to main.
 - Never perform remote actions (branch, issue, PR, push) without prior explicit human LGTM in this conversation or platform.
 - All PRs require human code review performed in the GitHub web interface.
-- Reference coordination issues #5 (GitLab migration) and #2 (public exemplary launches) from relevant artifacts.
+- Reference high-level coordination for the GitLab migration effort and public exemplary launches (using descriptive text only per sanitization rule) from relevant artifacts.
+- Perform sanitization verification on every contribution: no private coordination numbers or links.
 - Follow Conventional Commits, positive framing, and update AGENTS.md + playbooks when the mental model or process changes.
 
 See `.github/PULL_REQUEST_TEMPLATE.md`, `AGENTS.md`, and `docs/grok-playbooks.md` for details.
