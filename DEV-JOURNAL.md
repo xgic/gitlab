@@ -16,7 +16,7 @@ Living history of collaboration, major decisions, and phases. Positive, forward-
   - .env.example
   - config/gitlab.rb.example
 - Basic GHCR CI workflow added.
-- All artifacts reference coordination for the GitLab migration effort and public exemplary launches (high-level descriptive references only).
+- All artifacts reference coordination for the GitLab migration effort and public exemplary launches.
 - Strict compliance with Hard Security Rule (zero private leakage).
 - xde direction and no-Makefiles policy documented.
 - Platform issue draft prepared (human LGTM required before remote creation or commit).
@@ -107,9 +107,9 @@ All changes prepared following strict GitHub Flow on short-lived branch. Human v
 **2026-06-25 — Mandatory sanitization enforcement + Session ID "XGIC GitLab" (chore/enforce-mandatory-sanitization)**
 
 - Full leak audit performed (startup checklist).
-- All private coordination refs (#5, #2 and similar in migration/exemplary context) removed from public files and replaced with high-level descriptive text only:
-  - "coordinating the GitLab migration effort (high-level descriptive references only)"
-  - "public exemplary launches (high-level descriptive references only)"
+- All private coordination refs removed from public files and replaced with high-level text:
+  - "coordinating the GitLab migration effort"
+  - "public exemplary launches"
   - "High-level coordination references for the GitLab migration effort and public exemplary launches"
 - Updated: README, CHANGELOG, AGENTS.md, BASE-STANDARDS, orchestration-workflow.md, grok-playbooks.md, branch-protection.md, CONTRIBUTING.md, PULL_REQUEST_TEMPLATE.md, docker-compose.yml, stack/ files, architecture.md, LICENSE-VERIFICATION.md, etc.
 - Added/enforced full Mandatory Sanitization Rule in AGENTS and BASE-STANDARDS with examples.

@@ -5,7 +5,7 @@
 # Adds stronger production defaults, resource hints, and notes.
 # Configuration-driven via .env .
 #
-# High-level coordination for the GitLab migration effort and public exemplary launches (descriptive references only); v1.0.0 (#1 public milestone)
+# High-level coordination for the GitLab migration effort and public exemplary launches; v1.0.0 (#1 public milestone)
 # Human verification and approval required before any remote action or merge to main.
 # =============================================
 

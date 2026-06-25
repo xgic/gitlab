@@ -85,11 +85,11 @@ All detailed coordination, private project work, GitLab experiments, and anythin
 
 **Never include private GitLab issue numbers (e.g. #5, #2), private URLs, private repo paths, or direct links to private coordination in any public file, source comment, commit message, PR body, changelog, or artifact.**
 
-- Replace with high-level descriptive text only.
+- Replace with high-level text.
 - Good examples:
-  - "coordinating the GitLab migration effort (high-level descriptive references only)"
-  - "public exemplary launches (high-level descriptive references only)"
-  - "High-level coordination references for the GitLab migration effort and public exemplary launches"
+  - "coordinating the GitLab migration effort"
+  - "public exemplary launches"
+  - "High-level coordination for the GitLab migration effort and public exemplary launches"
 - Only direct references to public GitHub issues/PRs/milestones *in this repository* are permitted (e.g. #12, #1).
 - This rule is non-negotiable and part of the Hard Security Rule.
 - Enforce during every change: include a sanitization check in pre-change verification and templates.
@@ -107,7 +107,7 @@ At the beginning of almost every session, gather this context:
 2. `git status --short`
 3. `git remote -v` and current branch
 4. Review AGENTS.md, relevant docs (architecture.md, grok-playbooks.md, orchestration-workflow.md), and the LICENSE-VERIFICATION.md.
-5. Perform sanitization/leak audit (grep private refs, confirm high-level descriptive text only for any coordination).
+5. Perform sanitization/leak audit (grep private refs, confirm high-level text for any coordination).
 6. `xde --help` (or python -m equivalent) and `xde check` / environment validation when container work is involved.
 7. Review current `docker-compose.yml` (or stack definition) and `.env.example`.
 
@@ -155,7 +155,7 @@ Key invariants for agents:
 Follow BASE-STANDARDS and this playbook:
 - Create (or reference) the platform coordination issue first.
 - Detailed commit message describing files/setup.
-- Reference high-level coordination for the GitLab migration effort and public exemplary launches using descriptive text only (never private issue numbers).
+- Reference high-level coordination for the GitLab migration effort and public exemplary launches (never private issue numbers).
 - Human LGTM required before any commit that lands on main and before any remote action.
 - All drafts carry: "Human verification and approval required before any remote action or merge to main."
 
@@ -235,7 +235,7 @@ docker compose config   # validation only
 **Before finishing non-trivial work:**
 - Verify stack definitions (compose config, env example consistency).
 - Update AGENTS.md / relevant docs / playbooks if mental model or workflows changed.
-- Run sanitization audit: confirm zero private issue numbers, URLs, or direct private refs; high-level descriptive text only.
+- Run sanitization audit: confirm zero private issue numbers, URLs, or direct private refs; use high-level text.
 - Ensure every draft artifact contains: "Human verification and approval required before any remote action or merge to main."
 - Follow Conventional Commits and positive framing.
 

@@ -42,6 +42,6 @@ Use this file for distillation. Authoritative tracking lives on the GitHub platf
 - [x] Enhance branch protection issue (#8) + applied (enforce_admins true + status checks for build-and-push)
 - [x] Update branch-protection.md and tracking with final links (PRs #9/#10/#11, issues #7/#8; enforcement history section; verified via gh api on chore/sync-protection-tracking-links)
 - [x] PR #12 reviewed, approved, and merged by @xgic via GitHub web UI (https://github.com/xgic/gitlab/pull/12, merge commit 51f5684). Tracking sync and updates landed on main. Full rules propagation complete.
-- [x] Enforce mandatory sanitization + Session ID "XGIC GitLab" (chore/enforce-mandatory-sanitization): removed all private coordination refs, replaced with high-level descriptive text only. Added full rule + playbook + checklist. LGTM received; PR #13 created (https://github.com/xgic/gitlab/pull/13). Awaiting GitHub UI review/approval before merge.
+- [x] Enforce mandatory sanitization + Session ID "XGIC GitLab" (chore/enforce-mandatory-sanitization): removed all private coordination refs, replaced with high-level text. Added full rule + playbook + checklist. LGTM received; PR #13 created. Awaiting GitHub UI review/approval before merge.
 
 **Human verification and approval required before any remote action or merge to main.**

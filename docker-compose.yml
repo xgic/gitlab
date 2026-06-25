@@ -13,7 +13,7 @@
 # For container / environment tasks prefer `xde` (see AGENTS.md).
 # No Makefiles are used in this project.
 #
-# High-level coordination for the GitLab migration effort and public exemplary launches (descriptive references only)
+# High-level coordination for the GitLab migration effort and public exemplary launches
 # Human verification and approval required before any remote action or merge to main.
 # =============================================
 

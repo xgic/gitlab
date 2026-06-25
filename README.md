@@ -9,8 +9,8 @@
 This repository is the home for high-quality, reusable definitions that make it straightforward to run secure, maintainable, production-grade GitLab EE across a variety of environments.
 
 **Primary coordination**:
-- Coordinating the GitLab migration effort (high-level descriptive references only)
-- Public exemplary launches (high-level descriptive references only)
+- Coordinating the GitLab migration effort
+- Public exemplary launches
 
 **Human verification and approval required before any remote action or merge to main.**
 

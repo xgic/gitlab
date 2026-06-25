@@ -26,6 +26,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Reference image published to GHCR.
 - See PR #10 for rules propagation, PR #9 for initial clarifications.
 - Milestone: https://github.com/xgic/gitlab/milestone/1
-- High-level coordination for the GitLab migration effort and public exemplary launches (descriptive references only).
+- High-level coordination for the GitLab migration effort and public exemplary launches.
 
 Follow the mandatory human review gate before any remote action or merge to main — see AGENTS.md and BASE-STANDARDS-FOR-ORCHESTRATED-REPOS.md.

@@ -40,7 +40,7 @@ Per BASE-STANDARDS-FOR-ORCHESTRATED-REPOS.md:
 ## Pre-Change Verification
 
 - Read AGENTS.md and the Hard Security Rule (including Mandatory Sanitization Rule).
-- Perform leak/sanitization scan: no private issue numbers, private URLs, or direct private coordination refs. Use high-level descriptive text only (e.g. "coordinating the GitLab migration effort").
+- Perform leak/sanitization scan: no private issue numbers, private URLs, or direct private coordination refs. Use high-level text (e.g. "coordinating the GitLab migration effort").
 - Confirm no private details will be introduced.
 - For stack changes: validate compose, review pins, consider blast radius for data volumes.
 - Run relevant `xde` commands (or equivalent) with `--dry-run` first.
@@ -63,7 +63,7 @@ Changes to behavior, architecture, or process must be reflected in:
 
 ## Coordination References
 
-High-level references (descriptive text only) for the GitLab migration effort and public exemplary launches may be used where relevant in artifacts. Only public GitHub issues/PRs from this repository are directly referenced.
+High-level references for the GitLab migration effort and public exemplary launches may be used where relevant in artifacts. Only public GitHub issues/PRs from this repository are directly referenced.
 
 All artifacts must follow the mandatory sanitization rule.
 

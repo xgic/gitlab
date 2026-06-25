@@ -22,11 +22,11 @@ Violations are treated as security incidents. Human review is mandatory to preve
 
 **Never include private GitLab issue numbers (e.g. #5, #2), private URLs (e.g. gitlab.xorengames.com), private repo paths, or direct links to private issues/MRs in any public file, source comment, commit message, PR body, issue, changelog, or artifact.**
 
-- Replace with high-level descriptive text only.
+- Replace with high-level text.
 - Good examples:
-  - "coordinating the GitLab migration effort (high-level descriptive references only)"
-  - "public exemplary launches (high-level descriptive references only)"
-  - "High-level coordination references for the GitLab migration effort and public exemplary launches"
+  - "coordinating the GitLab migration effort"
+  - "public exemplary launches"
+  - "High-level coordination for the GitLab migration effort and public exemplary launches"
 - Reference only public GitHub issues/PRs from *this repository*.
 - Add explicit "Sanitization" checklist item to PR/issue templates and playbooks.
 - Enforce via pre-change verification, human review, and periodic leak scans (grep for #\d+ in coordination contexts, private domains).
@@ -103,7 +103,7 @@ Every public exemplary orchestrated repo must have (at minimum) the following:
     - **Documentation Professionalism**: Use professional language only. Avoid labels like "**Positive update:**". Do not reference ruleset bypass details unless the changes specifically target the rulesets.
     - **Platform-native tracking**: Draft issues/PRs fully in Grok (complete body with context, plan, checklists, exact gate sentence), receive explicit human LGTM, then create using native tools (gh after search_tool for MCP schemas if used). Local lightweight files are for high-level distillation only.
     - **Full Artifacts**: Include assignments (e.g. @xgic), consistent labels (type/, priority/, status/, area/, review/, grok/), milestones (for releases, major/epics/coordinated work; not for all small items).
-    - Reference high-level coordination for the GitLab migration effort and public exemplary launches (using descriptive text only) from artifacts where relevant.
+    - Reference high-level coordination for the GitLab migration effort and public exemplary launches from artifacts where relevant.
 
 - **Milestones**: Create draft milestones for releases, major work, epics, or coordinated efforts per platform best practices and semantic versioning. Every release must pass tests, receive approvals, include completed professional artifacts. Human LGTM before remote creation.
 
@@ -127,7 +127,7 @@ New public exemplary repo bootstrap (high-level):
 5. Add xde direction (no Makefiles) in workflow and CONTRIBUTING.
 6. Add memory triad and grok-playbooks skeleton.
 7. Human review of the initial base set.
-8. Record at high level in coordination trackers and link issues using descriptive text only for the GitLab migration effort and public exemplary launches.
+8. Record at high level in coordination trackers and link issues for the GitLab migration effort and public exemplary launches.
 
 Enforcement via human gates, branch protection, PR templates, and periodic review.
 
