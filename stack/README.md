@@ -29,4 +29,4 @@ See root `docker-compose.yml` and `.env.example` for configuration-driven option
 
 **Human verification and approval required before any remote action or merge to main.**
 
-Refs: #5, #2, v1.0.0 (#1)
+High-level coordination references for the GitLab migration effort and public exemplary launches; v1.0.0 (public milestone #1)

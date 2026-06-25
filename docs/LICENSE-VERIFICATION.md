@@ -82,5 +82,5 @@ See primary coordination for full context.
 
 ---
 
-**Coordination references**: GitLab migration (#5), Public exemplary launches (#2), v1.0.0 milestone #1.  
+**Coordination references**: High-level for the GitLab migration effort and public exemplary launches; v1.0.0 milestone #1 (public).
 **Human verification and approval required before any remote action or merge to main.**

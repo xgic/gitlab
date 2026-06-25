@@ -151,6 +151,7 @@ prompt.md
 
 # =============================================
 # Grok Build / xAI local status reports and coordination artifacts (NEVER commit)
+# Temporary Grok Build coordination artifacts and status reports (Session ID "XGIC GitLab" reports in .xgic/grok-build/) — never commit.
 # =============================================
 .xgic/
 .xgic/**
