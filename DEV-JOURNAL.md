@@ -148,3 +148,11 @@ Follow the mandatory human review gate before any remote action or merge to main
 - Confirmed state post PR #14 merge by @xgic via GitHub web UI.
 - Re-audit clean; all high-level, sanitized, positive framing.
 - Local tracking and memory up to date.
+
+**2026-06-27 — Gate text update (remove Human prefix)**
+- Tracking issue #15 created (new gate text, full fields, labels documentation/infrastructure, assignee @xgic).
+- Branch: chore/update-gate-text-remove-human-prefix.
+- All occurrences updated (19 files; core templates and BASE-STANDARDS prioritized; no changes to historical fenced quotes).
+- Committed; pushed; PR #16 created with new gate language in body.
+- LGTM + GitHub UI review/approval/merge pending per process.
+- All positive, professional, public scope only. High-level refs only.
