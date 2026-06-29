@@ -91,7 +91,7 @@ Next: Human LGTM on milestone update draft / further remote (if any); full v1.0.
 - Status report .xgic/grok-build/status-report.md present (will be refreshed at end of session with ID "XGIC GitLab").
 - Architecture remains clear: official gitlab/gitlab-ee pinned image as foundation service + externalized services.
 
-All changes prepared following strict GitHub Flow on short-lived branch. Human verification and approval required in GitHub web UI before any remote or merge.
+All changes prepared following strict GitHub Flow on short-lived branch. Review and approval required in GitHub web UI before any remote or merge to main.
 
 **LGTM received in session** — pushed branch `chore/sync-protection-tracking-links` and created PR #12 via gh (https://github.com/xgic/gitlab/pull/12). PR assigned @xgic, labeled documentation. Body carries gate sentence and "Human performs review/approval in the GitHub web UI."
 
@@ -132,10 +132,27 @@ All changes prepared following strict GitHub Flow on short-lived branch. Human v
 
 **2026-06-25 — CI build fix (chore/fix-docker-build-arg-parsing)**
 
-- LGTM received; created PR #14 (https://github.com/xgic/gitlab/pull/14).
+- LGTM received; PR #14 created.
+- Reviewed, approved, and merged by @xgic via GitHub web UI.
+- Merge commit: d6988f5.
 - Root cause of build failure (run 28164666182): inline comment leaked into GITLAB_VERSION build arg → invalid FROM ref.
 - Fixed by: comment on separate line in Dockerfile; added validation step in workflow; use clean output in build-args.
 - High-level coordination references only.
 - Follows sanitization rule and makes builds robust.
+- Local main synced. All positive, professional, public scope only.
 
 Follow the mandatory human review gate before any remote action or merge to main — see AGENTS.md and BASE-STANDARDS-FOR-ORCHESTRATED-REPOS.md.
+
+**2026-06-27 — Session status report generated**
+- Fresh report written to .xgic/grok-build/status-report.md with Session ID "XGIC GitLab" (UTC 2026-06-27-20-17-utc).
+- Confirmed state post PR #14 merge by @xgic via GitHub web UI.
+- Re-audit clean; all high-level, sanitized, positive framing.
+- Local tracking and memory up to date.
+
+**2026-06-27 — Gate text update (remove Human prefix)**
+- Tracking issue #15 created (new gate text, full fields, labels documentation/infrastructure, assignee @xgic).
+- Branch: chore/update-gate-text-remove-human-prefix.
+- All occurrences updated (19 files; core templates and BASE-STANDARDS prioritized; no changes to historical fenced quotes).
+- Committed; pushed; PR #16 created with new gate language in body.
+- LGTM + GitHub UI review/approval/merge pending per process.
+- All positive, professional, public scope only. High-level refs only.
