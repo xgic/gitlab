@@ -157,7 +157,7 @@ Follow BASE-STANDARDS and this playbook:
 - Detailed commit message describing files/setup.
 - Reference high-level coordination for the GitLab migration effort and public exemplary launches (never private issue numbers).
 - Human LGTM required before any commit that lands on main and before any remote action.
-- All drafts carry: "Human verification and approval required before any remote action or merge to main."
+- All drafts carry: "Review and approval required before any remote action or merge to main."
 
 ---
 
@@ -236,7 +236,7 @@ docker compose config   # validation only
 - Verify stack definitions (compose config, env example consistency).
 - Update AGENTS.md / relevant docs / playbooks if mental model or workflows changed.
 - Run sanitization audit: confirm zero private issue numbers, URLs, or direct private refs; use high-level text.
-- Ensure every draft artifact contains: "Human verification and approval required before any remote action or merge to main."
+- Ensure every draft artifact contains: "Review and approval required before any remote action or merge to main."
 - Follow Conventional Commits and positive framing.
 
 **Additional high-value reading (in recommended order):**

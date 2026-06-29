@@ -35,11 +35,11 @@
 ## AI Assistance
 
 - [ ] This PR (or the work leading to it) was prepared with assistance from Grok Build (or similar).
-- Human verification steps completed before remote actions (list comments, approvals, or "LGTM received"):
+- Review and approval steps completed before remote actions (list comments, approvals, or "LGTM received"):
 - Explicit gate language is present in drafts.
 
 ## Related Issues
 
 <!-- e.g. Closes #123 or high-level coordination reference for the GitLab migration effort and public exemplary launches (sanitized, descriptive text only) -->
 
-**Human verification and approval required before any remote action or merge to main.**
+**Review and approval required before any remote action or merge to main.**

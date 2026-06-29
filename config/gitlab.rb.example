@@ -28,4 +28,4 @@ external_url 'https://gitlab.example.com'
 
 # Backup settings, monitoring, etc. as needed.
 
-# Human verification and approval required before any remote action or merge to main.
+# Review and approval required before any remote action or merge to main.

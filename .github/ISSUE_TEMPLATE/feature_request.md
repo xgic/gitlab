@@ -20,4 +20,4 @@ Screenshots, examples, or links (public only).
 **Coordination**
 Refs: #5 (GitLab migration), #2 (public exemplary launches)
 
-**Human verification and approval required before any remote action or merge to main.**
+**Review and approval required before any remote action or merge to main.**

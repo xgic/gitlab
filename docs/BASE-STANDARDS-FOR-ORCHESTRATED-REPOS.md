@@ -42,13 +42,13 @@ Violations are treated as security incidents. Human review is mandatory to preve
 - The human must inspect the proposal/diff, run verification steps (lint where applicable, stack validation, security/leakage scan, manual read for tone and boundaries), and give explicit approval (LGTM comment, PR approval, or recorded note) **before** any push or merge to main.
 - For public exemplary repos: real PR + approval(s), consistent with the external-contributor-simulation model.
 - Enforcement: branch protection (≥1 required reviews, no direct main pushes, linear history), PR templates, AGENTS.md, and this base set.
-- Grok always produces clean professional draft artifacts (Draft PRs carrying explicit "Human verification and approval required before any remote action or merge to main" language in the body) and pauses for approval after every remote action proposal.
+- Grok always produces clean professional draft artifacts (Draft PRs carrying explicit "Review and approval required before any remote action or merge to main" language in the body) and pauses for approval after every remote action proposal.
 - **Mandatory human code review in platform UI**: All Pull Requests must undergo explicit human code review performed directly in the GitHub web interface. Grok prepares drafts but never approves or merges its own work.
 - **Attribution**: Use actual usernames when describing specific human actions performed in the platform.
 
 This rule strengthens oversight and pure flow requirements.
 
-**Human verification and approval required before any remote action or merge to main.**
+**Review and approval required before any remote action or merge to main.**
 
 ---
 
@@ -88,7 +88,7 @@ Every public exemplary orchestrated repo must have (at minimum) the following:
     - Linting/verification + docs updates in same commit where relevant.
     - Positive, constructive, forward-looking framing.
     - **Squash related small changes**: When a high number of small related changes are made, squash them into one fully detailed Conventional Commit that documents all modifications. This rule does not apply to completely unrelated changes, which must be submitted in separate merge requests or pull requests.
-    - **Initial commits in bootstraps**: Must be preceded by a platform tracking issue describing the bootstrap. The commit message must clearly identify it as the "Initial commit", state the project name and purpose, list the key files and structure introduced, describe the setup (base set, standards, xde, etc.), reference the issue, and use positive framing. Grok drafts; explicit human LGTM before committing. **Human verification and approval required before any remote action or merge to main.**
+    - **Initial commits in bootstraps**: Must be preceded by a platform tracking issue describing the bootstrap. The commit message must clearly identify it as the "Initial commit", state the project name and purpose, list the key files and structure introduced, describe the setup (base set, standards, xde, etc.), reference the issue, and use positive framing. Grok drafts; explicit human LGTM before committing. **Review and approval required before any remote action or merge to main.**
 12. **xde as the standard for container / environment orchestration tasks (no Makefiles)**:
     - `xde` is the preferred single interface.
     - No Makefiles or legacy make targets.
@@ -135,4 +135,4 @@ When patterns evolve, the base standards are updated first; downstream public ex
 
 **Every public exemplary repo must embody these standards visibly.** This is how we demonstrate excellence, security, and agent productivity to the community.
 
-**Human verification and approval required before any remote action or merge to main.**
+**Review and approval required before any remote action or merge to main.**

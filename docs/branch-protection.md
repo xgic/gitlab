@@ -22,10 +22,10 @@ This uses GitHub Rulesets (preferred on public repos) for flexible enforcement.
 ## How Protection Supports Our Process
 
 - All changes (including Grok-assisted work via MCP) must go through short-lived branches + Pull Requests.
-- Human verification and approval is required in the GitHub UI before merge to main.
+- Review and approval is required in the GitHub UI before merge to main.
 - Linear history + Conventional Commits keep the public history high-quality and bisectable.
 - CODEOWNERS + review requirement ensures key paths (compose, Docker, CI, docs, AGENTS) receive proper oversight.
-- This makes the "Human verification and approval required before any remote action or merge to main" gate mechanical and visible.
+- This makes the "Review and approval required before any remote action or merge to main" gate mechanical and visible.
 
 ## Future Enhancements
 
@@ -67,4 +67,4 @@ See also:
 - [grok-playbooks.md](grok-playbooks.md)
 - [CONTRIBUTING.md](../.github/CONTRIBUTING.md)
 
-**Human verification and approval required before any remote action or merge to main.**
+**Review and approval required before any remote action or merge to main.**

@@ -2,7 +2,7 @@
 
 **Status**: ✅ Verified suitable for all supported production use cases.  
 **Date**: 2026-06-23  
-**Gate**: Human verification and approval required before any remote action or merge to main.
+**Gate**: Review and approval required before any remote action or merge to main.
 
 ## Scope of This Verification
 
@@ -83,4 +83,4 @@ See primary coordination for full context.
 ---
 
 **Coordination references**: High-level for the GitLab migration effort and public exemplary launches; v1.0.0 milestone #1 (public).
-**Human verification and approval required before any remote action or merge to main.**
+**Review and approval required before any remote action or merge to main.**

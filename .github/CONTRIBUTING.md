@@ -98,7 +98,7 @@ This is a public exemplary repository. All work follows the external-contributor
 - Restate and follow the Hard Security Rule at all times (zero leakage of private details).
 - Use `xde` for container/environment tasks. No Makefiles.
 - Produce clean professional drafts only. Every draft issue or PR body must contain the exact sentence:
-  > Human verification and approval required before any remote action or merge to main.
+  > Review and approval required before any remote action or merge to main.
 - Never perform remote actions (branch, issue, PR, push) without prior explicit human LGTM in this conversation or platform.
 - All PRs require human code review performed in the GitHub web interface.
 - Reference high-level coordination for the GitLab migration effort and public exemplary launches (using descriptive text only per sanitization rule) from relevant artifacts.
@@ -111,6 +111,6 @@ See `.github/PULL_REQUEST_TEMPLATE.md`, `AGENTS.md`, and `docs/grok-playbooks.md
 
 Use the issue templates. Provide clear reproduction steps, expected behavior, and environment details.
 
-All issue descriptions for AI-assisted work should include the human gate sentence.
+All issue descriptions for AI-assisted work should include the gate sentence.
 
-**Human verification and approval required before any remote action or merge to main.**
+**Review and approval required before any remote action or merge to main.**
