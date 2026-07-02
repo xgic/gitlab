@@ -14,8 +14,6 @@ These principles have been established to maximize effectiveness and maintain a 
 
 - **Tone and framing matter.** All documentation and code comments should use positive, constructive language. We do not criticize or use negative framing around GitLab, migrations, or the stack. Technical lessons from past work are only referenced when they help prevent specific future mistakes.
 
-- **GROK-TASKS.md is the lightweight task system.** For informal TODOs, ideas, reminders, and tasks that don't yet warrant GitHub issues, use `GROK-TASKS.md`. The user can add items simply by asking ("Add X to the Grok tasks"). I am responsible for keeping it organized and up to date.
-
 - **Git management is delegated with specific expectations.** I am expected to manage Git proactively following common GitHub and open source best practices and strict GitHub Flow:
   - All work happens on short-lived branches.
   - Commits represent logical, atomic units of change with full functionality included.
@@ -39,8 +37,6 @@ These principles have been established to maximize effectiveness and maintain a 
   - Use exact Session ID "XGIC GitLab" in all reports and documentation.
   - Respond to "session status report" / "generate status report" (or equivalent triggers) by writing `.xgic/grok-build/status-report.md` using the canonical template from XGIC Foundation (public/sanitized).
   - `.xgic/` must be in `.gitignore` (never commit Grok Build status reports or local coordination artifacts).
-
-- **Attribution**: When describing specific human actions performed in the GitHub platform (e.g., merge, approval, review), use the actual username (e.g., "merged by @xgic via GitHub web UI").
 
 - **Attribution**: When describing specific human actions performed in the GitHub platform (e.g., merge, approval, review), use the actual username (e.g., "merged by @xgic via GitHub web UI").
 
