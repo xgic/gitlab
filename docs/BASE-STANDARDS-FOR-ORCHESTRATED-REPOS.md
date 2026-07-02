@@ -75,9 +75,9 @@ Every public exemplary orchestrated repo must have (at minimum) the following:
    - `architecture.md`: High-level mental model of the repo, key abstractions, invariants, public/private boundary note.
    - `grok-playbooks.md`: Concrete step-by-step workflows for common (especially AI-assisted) tasks.
    - `BASE-STANDARDS-FOR-ORCHESTRATED-REPOS.md` (this public variant).
-9. **Lightweight AI memory** (for heavy Grok Build use):
-   - `DEV-JOURNAL.md`
-   - `GROK-TASKS.md`
+9. **Lightweight AI memory and tracking** (for heavy Grok Build use):
+   - High-level distillation, session context, and informal TODOs live in the primary plan and platform issues/tasks.
+   - Temporary Grok Build status reports live in `.xgic/grok-build/status-report.md` (using the public template; always gitignored and never committed).
 10. **.gitignore**: Comprehensive (secrets, env, runtime data volumes, AI local overrides, Python caches, editor noise, etc.). Model after reference public patterns.
    - **Mandatory**: Include `.xgic/` (temporary Grok Build status reports and coordination artifacts). Never commit `.xgic/`.
    - Support for mandatory session status reports using Session ID "XGIC GitLab", saved to `.xgic/grok-build/status-report.md` using the public template. Document triggers in AGENTS.md.
@@ -99,7 +99,7 @@ Every public exemplary orchestrated repo must have (at minimum) the following:
     - Use clean professional draft issues/PRs carrying the exact gate sentence.
     - Mandatory human verification/approval on every remote action and before anything lands on main.
     - All PRs require human code review in the GitHub interface.
-    - Update AGENTS.md, GROK-TASKS.md, DEV-JOURNAL.md, and playbooks as part of relevant changes.
+    - Update AGENTS.md and playbooks as part of relevant changes.
     - **Documentation Professionalism**: Use professional language only. Avoid labels like "**Positive update:**". Do not reference ruleset bypass details unless the changes specifically target the rulesets.
     - **Platform-native tracking**: Draft issues/PRs fully in Grok (complete body with context, plan, checklists, exact gate sentence), receive explicit human LGTM, then create using native tools (gh after search_tool for MCP schemas if used). Local lightweight files are for high-level distillation only.
     - **Full Artifacts**: Include assignments (e.g. @xgic), consistent labels (type/, priority/, status/, area/, review/, grok/), milestones (for releases, major/epics/coordinated work; not for all small items).
