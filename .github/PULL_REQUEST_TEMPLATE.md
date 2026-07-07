@@ -14,32 +14,19 @@
 
 ## Testing & Verification
 
-**Required before requesting review** (see AGENTS.md and docs/orchestration-workflow.md):
-
-- [ ] `docker compose config` validates cleanly (or `xde` equivalent used)
+- [ ] `docker compose config` validates cleanly
 - [ ] Version pins reviewed; no bare `latest` in production paths
 - [ ] Stack tested for the affected environments (compose up / health checks)
 - [ ] Documentation (README, architecture, playbooks) updated where user-facing
-- [ ] `.github/` templates and AGENTS.md considered for updates
-- [ ] No private details or leakage introduced (Hard Security Rule)
-- [ ] Sanitization enforced: no private issue numbers (#5, #2 etc.), private URLs, or direct private coordination refs; only high-level descriptive text used
+- [ ] No private details or leakage introduced
 
 ## Checklist
 
-- [ ] My code / definitions follow the style and process in [CONTRIBUTING.md](.github/CONTRIBUTING.md) and AGENTS.md
+- [ ] My code / definitions follow the style and process in [CONTRIBUTING.md](.github/CONTRIBUTING.md)
 - [ ] I have performed a self-review
 - [ ] I have made corresponding documentation updates
 - [ ] Changes generate no new warnings or obvious security issues
-- [ ] Related high-level coordination references used (descriptive text only; no private issue numbers)
-
-## AI Assistance
-
-- [ ] This PR (or the work leading to it) was prepared with assistance from Grok Build (or similar).
-- Review and approval steps completed before remote actions (list comments, approvals, or "LGTM received"):
-- Explicit gate language is present in drafts.
 
 ## Related Issues
 
-<!-- e.g. Closes #123 or high-level coordination reference for the GitLab migration effort and public exemplary launches (sanitized, descriptive text only) -->
-
-**Review and approval required before any remote action or merge to main.**
+<!-- e.g. Closes #123 -->
