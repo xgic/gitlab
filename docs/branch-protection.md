@@ -67,4 +67,4 @@ See also:
 - [grok-playbooks.md](grok-playbooks.md)
 - [CONTRIBUTING.md](../.github/CONTRIBUTING.md)
 
-**Review and approval required before any remote action or merge to main.**
+**Review and approval per AGENTS.md and BASE-STANDARDS (web UI only).**

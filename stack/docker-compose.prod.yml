@@ -6,7 +6,7 @@
 # Configuration-driven via .env .
 #
 # High-level coordination for the GitLab migration effort and public exemplary launches; v1.0.0 (#1 public milestone)
-# Review and approval required before any remote action or merge to main.
+# Review/approval per AGENTS.md and BASE-STANDARDS (web UI).
 # =============================================
 
 services:

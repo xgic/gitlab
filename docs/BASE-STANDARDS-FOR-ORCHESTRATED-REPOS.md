@@ -42,7 +42,7 @@ Violations are treated as security incidents. Human review is mandatory to preve
 - The human must inspect the proposal/diff, run verification steps (lint where applicable, stack validation, security/leakage scan, manual read for tone and boundaries), and give explicit approval (LGTM comment, PR approval, or recorded note) **before** any push or merge to main.
 - For public exemplary repos: real PR + approval(s), consistent with the external-contributor-simulation model.
 - Enforcement: branch protection (≥1 required reviews, no direct main pushes, linear history), PR templates, AGENTS.md, and this base set.
-- Grok always produces clean professional draft artifacts (Draft PRs carrying explicit "Review and approval required before any remote action or merge to main" language in the body) and pauses for approval after every remote action proposal.
+- Grok always produces clean professional draft artifacts (Draft PRs carrying explicit short "Review and approval per AGENTS.md and BASE-STANDARDS (web UI)" reference in the body) and pauses for approval after every remote action proposal.
 - **Mandatory human code review in platform UI**: All Pull Requests must undergo explicit human code review performed directly in the GitHub web interface. Grok prepares drafts but never approves or merges its own work.
 - **Attribution**: Use actual usernames when describing specific human actions performed in the platform.
 

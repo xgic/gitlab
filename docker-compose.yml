@@ -14,7 +14,7 @@
 # No Makefiles are used in this project.
 #
 # High-level coordination for the GitLab migration effort and public exemplary launches
-# Review and approval required before any remote action or merge to main.
+# Review/approval per AGENTS.md and BASE-STANDARDS (web UI).
 # =============================================
 
 name: xgic-gitlab
