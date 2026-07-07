@@ -14,7 +14,7 @@
 # No Makefiles are used in this project.
 #
 # High-level coordination for the GitLab migration effort and public exemplary launches
-# Review and approval per AGENTS.md and BASE-STANDARDS-FOR-ORCHESTRATED-REPOS.md.
+
 # =============================================
 
 name: xgic-gitlab
