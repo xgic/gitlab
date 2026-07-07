@@ -81,7 +81,15 @@ Every public exemplary orchestrated repo must have (at minimum) the following:
 10. **.gitignore**: Comprehensive (secrets, env, runtime data volumes, AI local overrides, Python caches, editor noise, etc.). Model after reference public patterns.
    - **Mandatory**: Include `.xgic/` (temporary Grok Build status reports and coordination artifacts). Never commit `.xgic/`.
    - Support for mandatory session status reports using Session ID "XGIC GitLab", saved to `.xgic/grok-build/status-report.md` using the public template. Document triggers in AGENTS.md.
-11. **Commit discipline & culture**:
+11. **Python 3.14 standardization (new development only; see ADR 0002)**:
+   - All *new* Python code and projects shall use Python 3.14 as the minimum (latest stable).
+   - `pyproject.toml`: `requires-python = ">=3.14"`
+   - Containerized environments: official `python:3.14.6-slim` (pinned) base image.
+   - Update classifiers, CI, devcontainer.json, Dockerfiles, READMEs, AGENTS.md, and local standards to reflect this.
+   - Existing projects: optional migration; no forced changes unless part of new work.
+   - Fallback to 3.12 only after exhausting options (documented).
+   - Reference: `foundation/docs/xgic-python-namespace-convention.md` for namespace and CLI modules.
+12. **Commit discipline & culture**:
     - Detailed Conventional Commits: `<type>(<scope>): <short imperative subject>`.
     - Body explains the change and "why".
     - Atomic and complete.

@@ -168,6 +168,13 @@ Follow BASE-STANDARDS and this playbook:
 
 See `docs/orchestration-workflow.md` and the xde reference in the sibling xde project for patterns (EnvironmentContext, reliable Docker/Compose controller via subprocess, etc.).
 
+## Python 3.14 standardization for new development (see ADR 0002 and BASE-STANDARDS)
+- All new Python projects and code use Python 3.14.
+- `pyproject.toml`: `requires-python = ">=3.14"`
+- Containers: `python:3.14.6-slim` (pinned).
+- Update classifiers, docs, CI, devcontainers, READMEs, and this AGENTS.md accordingly.
+- Existing code unaffected unless migrated. Fallback to 3.12 only after analysis.
+
 ---
 
 ## Safety & Destructive Operations
