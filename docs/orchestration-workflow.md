@@ -67,4 +67,4 @@ High-level references for the GitLab migration effort and public exemplary launc
 
 All artifacts must follow the mandatory sanitization rule.
 
-**Review and approval per AGENTS.md and BASE-STANDARDS (web UI only).**
+**Review and approval per AGENTS.md and BASE-STANDARDS-FOR-ORCHESTRATED-REPOS.md.**

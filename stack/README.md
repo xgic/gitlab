@@ -27,6 +27,6 @@ See root `docker-compose.yml` and `.env.example` for configuration-driven option
 - **Scaling**: Single Compose is great for small-medium; use K8s for large.
 - **Security**: Keep .env secret, restrict ports, regular image updates.
 
-**Review and approval per AGENTS.md and BASE-STANDARDS (in web UI).**
+**Review and approval per AGENTS.md and BASE-STANDARDS-FOR-ORCHESTRATED-REPOS.md.**
 
 High-level coordination references for the GitLab migration effort and public exemplary launches; v1.0.0 (public milestone #1)

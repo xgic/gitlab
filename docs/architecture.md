@@ -48,7 +48,7 @@ The stack supports:
 
 This architecture directly supports coordinating the GitLab migration effort and serves as the public exemplary implementation.
 
-**Review and approval per AGENTS.md and BASE-STANDARDS (web UI only).**
+**Review and approval per AGENTS.md and BASE-STANDARDS-FOR-ORCHESTRATED-REPOS.md.**
 
 See:
 - `docker-compose.yml`

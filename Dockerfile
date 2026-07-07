@@ -15,7 +15,7 @@
 # Version pinning is handled via build-arg and compose .env.
 #
 # Coordination: #5, #2
-# Review/approval per AGENTS.md and BASE-STANDARDS (web UI).
+# Review and approval per AGENTS.md and BASE-STANDARDS-FOR-ORCHESTRATED-REPOS.md.
 # =============================================
 
 # v1.0.0 release pin

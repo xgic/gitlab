@@ -67,4 +67,4 @@ See also:
 - [grok-playbooks.md](grok-playbooks.md)
 - [CONTRIBUTING.md](../.github/CONTRIBUTING.md)
 
-**Review and approval per AGENTS.md and BASE-STANDARDS (web UI only).**
+**Review and approval per AGENTS.md and BASE-STANDARDS-FOR-ORCHESTRATED-REPOS.md.**
