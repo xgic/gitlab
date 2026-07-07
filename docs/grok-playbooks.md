@@ -70,7 +70,7 @@ Never use unpinned "latest" in production definitions.
 
 ## Playbook: Bootstrap Work (Initial Public Setup)
 
-- Create the platform issue first (complete body, plan, checklist, exact gate sentence: "Review and approval required before any remote action or merge to main.").
+- Create the platform issue first (complete body, plan, checklist). Refer to the review gate policy in AGENTS.md and BASE-STANDARDS-FOR-ORCHESTRATED-REPOS.md.
 - Implement base set + high-level stack skeleton.
 - License verification gate documented.
 - All artifacts follow sanitization: use only high-level references for the GitLab migration effort and public exemplary launches.
@@ -93,4 +93,4 @@ This is a first-class security practice. See AGENTS.md and BASE-STANDARDS for th
 
 See BASE-STANDARDS and orchestration-workflow.md for full requirements.
 
-**Review and approval required before any remote action or merge to main.**
+

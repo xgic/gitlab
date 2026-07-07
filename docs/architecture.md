@@ -48,7 +48,7 @@ The stack supports:
 
 This architecture directly supports coordinating the GitLab migration effort and serves as the public exemplary implementation.
 
-**Review and approval required before any remote action or merge to main.**
+
 
 See:
 - `docker-compose.yml`

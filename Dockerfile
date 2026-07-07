@@ -15,7 +15,7 @@
 # Version pinning is handled via build-arg and compose .env.
 #
 # Coordination: #5, #2
-# Review and approval required before any remote action or merge to main.
+
 # =============================================
 
 # v1.0.0 release pin

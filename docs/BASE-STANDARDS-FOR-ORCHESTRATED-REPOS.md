@@ -42,7 +42,7 @@ Violations are treated as security incidents. Human review is mandatory to preve
 - The human must inspect the proposal/diff, run verification steps (lint where applicable, stack validation, security/leakage scan, manual read for tone and boundaries), and give explicit approval (LGTM comment, PR approval, or recorded note) **before** any push or merge to main.
 - For public exemplary repos: real PR + approval(s), consistent with the external-contributor-simulation model.
 - Enforcement: branch protection (≥1 required reviews, no direct main pushes, linear history), PR templates, AGENTS.md, and this base set.
-- Grok always produces clean professional draft artifacts (Draft PRs carrying explicit "Review and approval required before any remote action or merge to main" language in the body) and pauses for approval after every remote action proposal.
+- Grok always produces clean professional draft artifacts and pauses for approval after every remote action proposal. The human review gate policy is documented in AGENTS.md and this document.
 - **Mandatory human code review in platform UI**: All Pull Requests must undergo explicit human code review performed directly in the GitHub web interface. Grok prepares drafts but never approves or merges its own work.
 - **Attribution**: Use actual usernames when describing specific human actions performed in the platform.
 
@@ -65,10 +65,10 @@ Every public exemplary orchestrated repo must have (at minimum) the following:
    - Branch protection on `main`.
 3. **Standard labels and templates**:
    - Consistent labels for type, priority, status, area, review.
-   - `.github/ISSUE_TEMPLATE/` and `PULL_REQUEST_TEMPLATE.md` with standard fields, checklists, and the exact gate sentence.
+   - `.github/ISSUE_TEMPLATE/` and `PULL_REQUEST_TEMPLATE.md` with standard fields and practical checklists. Do not restate rules or gate procedures (see AGENTS.md and BASE-STANDARDS-FOR-ORCHESTRATED-REPOS.md for centralized rules).
 4. **The human review gate** (documented in CONTRIBUTING.md + AGENTS.md).
 5. **Root project instruction file**: `AGENTS.md` (contains collaboration principles, session startup checklist, hard security rule, human review gate, commit expectations, xde standard, and references to base standards / playbooks).
-6. **CONTRIBUTING.md** (placed at `.github/CONTRIBUTING.md`): Covers GitHub Flow, the review gate, AI/Grok usage with human gates + clean professional draft artifacts (exact gate sentence; no "ai-draft" labels), tone, commit discipline, and base set expectations.
+6. **CONTRIBUTING.md** (placed at `.github/CONTRIBUTING.md`): Covers GitHub Flow, AI/Grok usage, tone, commit discipline, and base set expectations. Do not restate review gates or procedures from AGENTS.md / BASE-STANDARDS in templates or CONTRIBUTING (centralized in AGENTS.md and this document).
 7. **README.md**: Purpose, quick start (including xde / Compose usage), security note, high-level status, and links back to coordination.
 8. **docs/ skeleton** (minimum):
    - `orchestration-workflow.md` (or development-workflow.md): Commit discipline, pre-change checks, branching/PRs + review gate, positive framing, xde usage, how/when to update docs.
@@ -96,7 +96,7 @@ Every public exemplary orchestrated repo must have (at minimum) the following:
     - Strong safety primitives and clear next-step guidance.
 13. **Grok usage rules**:
     - For coordination, multi-repo, strategy, or boundary work: always restate the full Hard Security Rule.
-    - Use clean professional draft issues/PRs carrying the exact gate sentence.
+    - Use clean professional draft issues/PRs. Do not embed gate or review procedure language in templates; refer to AGENTS.md and BASE-STANDARDS-FOR-ORCHESTRATED-REPOS.md.
     - Mandatory human verification/approval on every remote action and before anything lands on main.
     - All PRs require human code review in the GitHub interface.
     - Update AGENTS.md and playbooks as part of relevant changes.

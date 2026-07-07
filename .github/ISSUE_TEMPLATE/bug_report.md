@@ -25,8 +25,3 @@ What you expected to happen.
 
 **Additional context**
 Any other context, logs (sanitized), or screenshots.
-
-**Coordination**
-Refs: #5 (migration), #2 (public exemplary)
-
-**Review and approval required before any remote action or merge to main.**

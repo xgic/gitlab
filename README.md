@@ -12,8 +12,6 @@ This repository is the home for high-quality, reusable definitions that make it 
 - Coordinating the GitLab migration effort
 - Public exemplary launches
 
-**Review and approval required before any remote action or merge to main.**
-
 ## Features
 
 - Official GitLab EE images with explicit version pinning
@@ -99,7 +97,7 @@ Please read:
 
 Follow GitHub Flow, Conventional Commits, the human review gate, and positive framing at all times.
 
-**Review and approval required before any remote action or merge to main.**
+
 
 ## Coordination
 
