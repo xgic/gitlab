@@ -88,7 +88,7 @@ Every public exemplary orchestrated repo must have (at minimum) the following:
    - Update classifiers, CI, devcontainer.json, Dockerfiles, READMEs, AGENTS.md, and local standards to reflect this.
    - Existing projects: optional migration; no forced changes unless part of new work.
    - Fallback to 3.12 only after exhausting options (documented).
-   - Reference: `foundation/docs/xgic-python-namespace-convention.md` for namespace and CLI modules.
+   - Reference: public multi-repo standards at https://github.com/xgic/ai (docs/xgic-python-namespace-convention.md and docs/adr/).
 12. **Commit discipline & culture**:
     - Detailed Conventional Commits: `<type>(<scope>): <short imperative subject>`.
     - Body explains the change and "why".
