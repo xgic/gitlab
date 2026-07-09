@@ -35,7 +35,7 @@ These principles have been established to maximize effectiveness and maintain a 
 
 - **Status Reporting (Mandatory)**:
   - Use exact Session ID "XGIC GitLab" in all reports and documentation.
-  - Respond to "session status report" / "generate status report" (or equivalent triggers) by writing `.xgic/grok-build/status-report.md` using the canonical template from XGIC Foundation (public/sanitized).
+  - Respond to "session status report" / "generate status report" (or equivalent triggers) by writing `.xgic/grok-build/status-report.md` using the project's public status-report template.
   - `.xgic/` must be in `.gitignore` (never commit Grok Build status reports or local coordination artifacts).
 
 - **Attribution**: When describing specific human actions performed in the GitHub platform (e.g., merge, approval, review), use the actual username (e.g., "merged by @xgic via GitHub web UI").
