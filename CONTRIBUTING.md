@@ -114,3 +114,7 @@ Use the issue templates. Provide clear reproduction steps, expected behavior, an
 All issue descriptions for AI-assisted work should include the gate sentence.
 
 **Review and approval required before any remote action or merge to main.**
+
+## Multi-repo standards
+
+Portfolio standards, ADRs, and community-health rules: https://github.com/xgic/ai (see https://github.com/xgic/ai/blob/main/docs/community-health.md).
