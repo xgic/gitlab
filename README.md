@@ -80,19 +80,22 @@ The GHCR image for v1.0.0: `ghcr.io/xgic/gitlab/gitlab-ee:v1.0.0` (and semver ta
 
 ## License & Verification
 
-This repository is licensed under the Apache License 2.0.
+Copyright 2026 XGIC.  
+This repository is licensed under the [Apache License, Version 2.0](LICENSE). See [NOTICE](NOTICE).
 
 A formal verification of suitability for the supported production and educational use cases is maintained in:
 
 - [docs/LICENSE-VERIFICATION.md](docs/LICENSE-VERIFICATION.md)
 
-**Status**: ✅ Verified (see document for scope, caveats, and user responsibilities).
+**Status**: Verified (see document for scope, caveats, and user responsibilities).  
+**Note:** Apache-2.0 covers this repository's orchestration definitions only; it does not grant rights to GitLab EE itself.
+
 
 ## Contributing
 
 Please read:
 - [AGENTS.md](AGENTS.md) (especially the Hard Security Rule and startup checklist)
-- [.github/CONTRIBUTING.md](.github/CONTRIBUTING.md)
+- [CONTRIBUTING.md](CONTRIBUTING.md)
 - [docs/orchestration-workflow.md](docs/orchestration-workflow.md)
 
 Follow GitHub Flow, Conventional Commits, the human review gate, and positive framing at all times.
