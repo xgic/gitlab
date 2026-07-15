@@ -1,0 +1,9 @@
+# CODEOWNERS — repository root (XGIC standard)
+* @xgic
+/CODEOWNERS @xgic
+/AGENTS.md @xgic
+/docs/ @xgic
+/.github/ @xgic
+/docker-compose*.yml @xgic
+/config/ @xgic
+/README.md @xgic
