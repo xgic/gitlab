@@ -29,7 +29,7 @@ Standards: [xgic/ai](https://github.com/xgic/ai).
 - External PostgreSQL and Redis (production-oriented)
 - XGIC orchestration container for ops/health (primary Compose service)
 - Configuration via `.env` (no hard-coded private hosts)
-- Apache-2.0 for orchestration definitions only (not a GitLab EE license)
+- Apache-2.0 for orchestration definitions only (does not license GitLab EE software)
 
 ## Quick start
 
@@ -44,7 +44,11 @@ docker compose up -d
 
 **Note:** Until `ghcr.io/xgic/xgic-gitlab` publishes tagged releases, build locally from [gitlab-dev](https://github.com/xgic/gitlab-dev) and set `XGIC_GITLAB_IMAGE` / `XGIC_GITLAB_TAG` in `.env`.
 
-**Important:** GitLab EE requires a valid license for production use. This repository’s Apache-2.0 license covers orchestration definitions only.
+### GitLab Enterprise Edition licensing
+
+This stack uses the official **GitLab Enterprise Edition** container image. GitLab EE can be run **without a paid subscription**: the free tier of EE includes core product capabilities with feature limits appropriate for evaluation, small teams, and many self-managed deployments. Adopting EE from the start provides a **smoother upgrade path** to paid tiers (Premium/Ultimate) when you need advanced features—typically by applying a subscription to the same EE instance—rather than migrating from GitLab Community Edition (CE) later.
+
+This repository’s **Apache License 2.0** covers only the XGIC orchestration definitions (Compose, configuration examples, and related docs). It does **not** grant rights to GitLab EE itself. Always review current [GitLab licensing and pricing](https://about.gitlab.com/pricing/) for feature availability and commercial terms.
 
 ## Repository Structure (High-Level)
 
@@ -83,7 +87,7 @@ A formal verification of suitability for the supported production and educationa
 - [docs/LICENSE-VERIFICATION.md](docs/LICENSE-VERIFICATION.md)
 
 **Status**: Verified (see document for scope, caveats, and user responsibilities).  
-**Note:** Apache-2.0 covers this repository's orchestration definitions only; it does not grant rights to GitLab EE itself.
+**Note:** Apache-2.0 covers this repository’s orchestration definitions only. GitLab EE may be used under GitLab’s free EE tier (with feature limits) or with a paid subscription; see the licensing section above and GitLab’s current terms.
 
 
 ## Contributing
