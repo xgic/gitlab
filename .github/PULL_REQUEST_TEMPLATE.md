@@ -18,7 +18,7 @@
 - [ ] Version pins reviewed; no bare `latest` in production paths
 - [ ] Stack tested for the affected environments (compose up / health checks)
 - [ ] Documentation (README, architecture, playbooks) updated where user-facing
-- [ ] No private details or leakage introduced
+- [ ] **Public-safe:** no private hosts, private tracker IDs/paths, or internal URLs
 
 ## Checklist
 
@@ -26,7 +26,9 @@
 - [ ] I have performed a self-review
 - [ ] I have made corresponding documentation updates
 - [ ] Changes generate no new warnings or obvious security issues
+- [ ] Labels applied
+- [ ] PR body and commits remain public-safe (no private tracker links)
 
 ## Related Issues
 
-<!-- e.g. Closes #123 -->
+<!-- Public GitHub issues only (e.g. Closes #123). Never link private trackers. -->
