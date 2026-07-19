@@ -1,7 +1,7 @@
 # XGIC GitLab — Docker Compose template
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
-[![GitLab EE](https://img.shields.io/badge/GitLab_EE-official_image-8c8c8c?logo=gitlab&logoColor=white)](https://about.gitlab.com/)
+[![GitLab EE](https://img.shields.io/badge/GitLab_EE-self--managed-8c8c8c?logo=gitlab&logoColor=white)](https://about.gitlab.com/pricing/?deployment=self-managed-deployment)
 [![Docker Compose](https://img.shields.io/badge/Docker-Compose-blue?logo=docker&logoColor=white)](https://docs.docker.com/compose/)
 
 **End-user template** for a production-oriented **GitLab Enterprise Edition** stack on Docker Compose:
@@ -44,11 +44,23 @@ docker compose up -d
 
 **Note:** Until `ghcr.io/xgic/xgic-gitlab` publishes tagged releases, build locally from [gitlab-dev](https://github.com/xgic/gitlab-dev) and set `XGIC_GITLAB_IMAGE` / `XGIC_GITLAB_TAG` in `.env`.
 
-### GitLab Enterprise Edition licensing
+### GitLab Enterprise Edition licensing (self-managed)
 
-This stack uses the official **GitLab Enterprise Edition** container image. GitLab EE can be run **without a paid subscription**: the free tier of EE includes core product capabilities with feature limits appropriate for evaluation, small teams, and many self-managed deployments. Adopting EE from the start provides a **smoother upgrade path** to paid tiers (Premium/Ultimate) when you need advanced features—typically by applying a subscription to the same EE instance—rather than migrating from GitLab Community Edition (CE) later.
+This template runs the official **GitLab Enterprise Edition** container image under GitLab’s **Self-Managed** deployment model—software you host and operate (for example on-premises or in your own cloud account), not GitLab.com SaaS.
 
-This repository’s **Apache License 2.0** covers only the XGIC orchestration definitions (Compose, configuration examples, and related docs). It does **not** grant rights to GitLab EE itself. Always review current [GitLab licensing and pricing](https://about.gitlab.com/pricing/) for feature availability and commercial terms.
+**Free tier for self-managed EE.** GitLab EE can be operated **without a paid subscription**. The free (Core) tier of self-managed EE provides a generous set of capabilities for private projects and internal DevSecOps platforms: source control, CI/CD, issues and planning basics, and related collaboration features, subject to GitLab’s published free-tier limits. That combination is well suited to private organizational instances, labs, and production-ready foundations that may later grow in scale or compliance needs.
+
+**Why EE (not Community Edition) for XGIC-oriented stacks.** Standardizing on the official EE image from day one:
+
+- Keeps private projects on a modern, enterprise-aligned product line while remaining free to start  
+- Avoids a later CE → EE migration when advanced security, compliance, or scale features are required  
+- Supports a clean commercial path: apply a **Premium** or **Ultimate** self-managed subscription to the same EE instance when the organization is ready  
+
+Always confirm current feature sets and commercial terms on GitLab’s Self-Managed pricing page:
+
+https://about.gitlab.com/pricing/?deployment=self-managed-deployment
+
+**This repository’s license.** The **Apache License 2.0** in this project applies only to XGIC orchestration definitions (Docker Compose, configuration examples, documentation, and related automation). It does **not** license GitLab EE software. Use of the `gitlab/gitlab-ee` image is governed by GitLab’s own terms for self-managed deployments.
 
 ## Repository Structure (High-Level)
 
@@ -87,7 +99,7 @@ A formal verification of suitability for the supported production and educationa
 - [docs/LICENSE-VERIFICATION.md](docs/LICENSE-VERIFICATION.md)
 
 **Status**: Verified (see document for scope, caveats, and user responsibilities).  
-**Note:** Apache-2.0 covers this repository’s orchestration definitions only. GitLab EE may be used under GitLab’s free EE tier (with feature limits) or with a paid subscription; see the licensing section above and GitLab’s current terms.
+**Note:** Apache-2.0 covers this repository’s orchestration definitions only. The official GitLab EE image is governed by GitLab’s **Self-Managed** licensing (free tier with limits, or paid Premium/Ultimate). See [Self-Managed pricing](https://about.gitlab.com/pricing/?deployment=self-managed-deployment) and the licensing section above.
 
 
 ## Contributing
