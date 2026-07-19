@@ -60,7 +60,7 @@ This repository’s **Apache License 2.0** covers only the XGIC orchestration de
 │   ├── dependabot.yml
 │   ├── ISSUE_TEMPLATE/
 │   ├── PULL_REQUEST_TEMPLATE.md
-│   └── workflows/          # Build + release to GHCR
+│   └── workflows/          # Template CI notes (image build in gitlab-dev)
 ├── config/                 # Example gitlab.rb, templates
 ├── docs/
 │   ├── architecture.md
