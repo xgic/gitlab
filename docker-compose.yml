@@ -1,46 +1,65 @@
-# =============================================
-# XGIC GitLab — Optimized Production Compose Stack
-# GitLab EE + PostgreSQL + supporting services
+# XGIC GitLab — template Docker Compose stack (consumer)
 #
-# This is a generalized, configuration-driven definition.
-# Version pins and external services recommended for production.
+# - Official GitLab EE + PostgreSQL + Redis (vendor images, unaltered)
+# - Production XGIC orchestration image: ghcr.io/xgic/xgic-gitlab
+#   (built by https://github.com/xgic/gitlab-dev — not this repo)
+#
+# Startup: xgic-gitlab starts first (ops available even if GitLab EE is slow).
+# Destructive ops should still wait for GitLab EE readiness inside commands.
 #
 # Usage:
-#   cp .env.example .env && $EDITOR .env
-#   docker compose config   # validate
+#   cp .env.example .env
+#   docker compose config
 #   docker compose up -d
-#
-# For container / environment tasks prefer `xde` (see AGENTS.md).
-# No Makefiles are used in this project.
-#
-# High-level coordination for the GitLab migration effort and public exemplary launches
-
-# =============================================
 
 name: xgic-gitlab
 
 services:
-  gitlab:
-    # Official GitLab EE image — always pin a specific version for production
-    image: gitlab/gitlab-ee:${GITLAB_VERSION:-18.11.6-ee.0}
-    container_name: gitlab
+  # Primary XGIC orchestration service (starts first; not blocked on GitLab EE healthy)
+  xgic-gitlab:
+    image: ${XGIC_GITLAB_IMAGE:-ghcr.io/xgic/xgic-gitlab}:${XGIC_GITLAB_TAG:-latest}
+    container_name: xgic-gitlab
+    restart: unless-stopped
+    ports:
+      - "${XGIC_GITLAB_PORT:-8080}:8080"
+    environment:
+      TZ: ${TZ:-UTC}
+      # Optional: non-production GitLab URL for ops tools (never hard-code production hosts in files)
+      # GITLAB_URL: ${GITLAB_URL:-}
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://127.0.0.1:8080/healthz"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+  gitlab-ee:
+    image: gitlab/gitlab-ee:${GITLAB_VERSION:-18.11.7-ee.0}
+    container_name: gitlab-ee
     restart: unless-stopped
     hostname: gitlab
     environment:
       GITLAB_OMNIBUS_CONFIG: |
         external_url '${GITLAB_EXTERNAL_URL:-http://localhost:8929}'
-        # Production omnibus settings (add as needed)
-        # gitlab_rails['time_zone'] = 'UTC'
-        # gitlab_rails['backup_path'] = '/var/opt/gitlab/backups'
+        postgresql['enable'] = false
+        gitlab_rails['db_adapter'] = 'postgresql'
+        gitlab_rails['db_encoding'] = 'unicode'
+        gitlab_rails['db_host'] = 'postgres'
+        gitlab_rails['db_port'] = 5432
+        gitlab_rails['db_username'] = '${POSTGRES_USER:-gitlab}'
+        gitlab_rails['db_password'] = '${POSTGRES_PASSWORD:-CHANGE_ME_STRONG}'
+        gitlab_rails['db_database'] = '${POSTGRES_DB:-gitlabhq_production}'
+        redis['enable'] = false
+        gitlab_rails['redis_host'] = 'redis'
+        gitlab_rails['redis_port'] = 6379
       TZ: ${TZ:-UTC}
     ports:
-      - "8929:80"
-      - "2224:22"
+      - "${GITLAB_HTTP_PORT:-8929}:80"
+      - "${GITLAB_SSH_PORT:-2224}:22"
     volumes:
       - ${GITLAB_DATA_DIR:-./gitlab-data}:/var/opt/gitlab
       - ${GITLAB_LOGS_DIR:-./gitlab-logs}:/var/log/gitlab
       - ${GITLAB_CONFIG_DIR:-./gitlab-config}:/etc/gitlab
-      # Backup volume (recommended for production gitlab-backup rake tasks)
       - ${GITLAB_BACKUPS_DIR:-./gitlab-backups}:/var/opt/gitlab/backups
     depends_on:
       postgres:
@@ -53,21 +72,10 @@ services:
       timeout: 10s
       retries: 5
       start_period: 300s
-    shm_size: '256m'
-    # Production resource recommendations (adjust per load)
-    deploy:
-      resources:
-        limits:
-          cpus: '2'
-          memory: 4G
-        reservations:
-          cpus: '1'
-          memory: 2G
-    # For HTTPS production: set external_url to https://... and provide certs via volume or Omnibus config
-    # Recommended: Use external reverse proxy (e.g. Traefik/Nginx) or GitLab's built-in Let's Encrypt
+    shm_size: "256m"
 
   postgres:
-    image: postgres:${POSTGRES_VERSION:-16}
+    image: postgres:${POSTGRES_VERSION:-18}
     container_name: gitlab-postgres
     restart: unless-stopped
     environment:
@@ -77,14 +85,17 @@ services:
     volumes:
       - ${POSTGRES_DATA_DIR:-./postgres-data}:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-gitlab} -d ${POSTGRES_DB:-gitlabhq_production}"]
+      test:
+        [
+          "CMD-SHELL",
+          "pg_isready -U ${POSTGRES_USER:-gitlab} -d ${POSTGRES_DB:-gitlabhq_production}",
+        ]
       interval: 10s
       timeout: 5s
       retries: 5
-    # For production: add resource limits and consider dedicated network
 
   redis:
-    image: redis:${REDIS_VERSION:-7}-alpine
+    image: redis:${REDIS_VERSION:-8.8}-alpine
     container_name: gitlab-redis
     restart: unless-stopped
     volumes:
@@ -94,16 +105,7 @@ services:
       interval: 10s
       timeout: 3s
       retries: 5
-    # Always included (lightweight and recommended for GitLab caching/sidekiq)
-    # Production: add resource limits as needed
-
-# Profiles for environment-specific stacks
-# `docker compose up`          : gitlab + postgres (quick start)
-# `docker compose --profile prod up` : includes redis + full prod recommendations
 
 networks:
   default:
     name: xgic-gitlab-net
-
-# Volumes are declared via bind mounts in this example for simplicity.
-# For named volumes in some environments, switch the paths in .env and compose.

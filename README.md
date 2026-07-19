@@ -1,55 +1,66 @@
-# XGIC GitLab — Production GitLab EE Stack
+# XGIC GitLab — Docker Compose template
 
-[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![GitLab EE](https://img.shields.io/badge/GitLab-EE-8c8c8c?logo=gitlab&logoColor=white)](https://about.gitlab.com/pricing/)
-[![Docker](https://img.shields.io/badge/Docker-Compose-blue?logo=docker&logoColor=white)](https://docs.docker.com/compose/)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
+[![GitLab EE](https://img.shields.io/badge/GitLab_EE-self--managed-8c8c8c?logo=gitlab&logoColor=white)](https://about.gitlab.com/pricing/?deployment=self-managed-deployment)
+[![Docker Compose](https://img.shields.io/badge/Docker-Compose-blue?logo=docker&logoColor=white)](https://docs.docker.com/compose/)
 
-> **Public exemplary repository** — Generalized, configuration-driven production GitLab Enterprise Edition image definitions and optimized multi-container Compose stack (GitLab EE + PostgreSQL + supporting services).
+**End-user template** for a production-oriented **GitLab Enterprise Edition** stack on Docker Compose:
 
-This repository is the home for high-quality, reusable definitions that make it straightforward to run secure, maintainable, production-grade GitLab EE across a variety of environments.
+| Service | Image |
+|---------|--------|
+| XGIC orchestration (starts **first**) | `ghcr.io/xgic/xgic-gitlab` ([built by gitlab-dev](https://github.com/xgic/gitlab-dev)) |
+| GitLab EE | Official `gitlab/gitlab-ee` (unaltered) |
+| PostgreSQL | Official `postgres:18` |
+| Redis | Official `redis:8.8` |
 
-**Primary coordination**:
-- Coordinating the GitLab migration effort
-- Public exemplary launches
+Architecture: [ADR-0001](https://github.com/xgic/ai/blob/main/docs/adr/0001-xgic-gitlab-architecture-and-repository-naming.md).  
+Standards: [xgic/ai](https://github.com/xgic/ai).
+
+## Dual-repo model
+
+| Repository | Role |
+|------------|------|
+| [xgic/gitlab-dev](https://github.com/xgic/gitlab-dev) | Dev Container + multi-stage **build/publish** of `ghcr.io/xgic/xgic-gitlab` |
+| **This repo** | Clean **template** Compose stack for operators |
 
 ## Features
 
-- Official GitLab EE images with explicit version pinning
-- Optimized multi-container Compose stack with external PostgreSQL (recommended for production scalability)
-- Supporting services (Redis, etc.) as needed for a complete production profile
-- Configuration-driven via environment and templates
-- CI/CD-friendly structure targeting GHCR for releases
-- Apache 2.0 licensing verified for the supported use cases (see `docs/LICENSE-VERIFICATION.md`)
+- Official GitLab EE with explicit version pins
+- External PostgreSQL and Redis (production-oriented)
+- XGIC orchestration container for ops/health (primary Compose service)
+- Configuration via `.env` (no hard-coded private hosts)
+- Apache-2.0 for orchestration definitions only (does not license GitLab EE software)
 
-## Supported Environments
-
-- Docker Compose (on-premises and development)
-- Kubernetes (Compose definitions serve as reference; Helm or manifests can be derived)
-- AWS (EC2, ECS, EKS) and other cloud providers
-- Educational, tutorial, and white-paper reuse
-
-## v1.0.0 Release
-
-v1.0.0 is the first stable production release. The reference image is published to GHCR on tag `v1.0.0`.
-
-## Quick Start (Compose)
+## Quick start
 
 ```bash
 git clone https://github.com/xgic/gitlab.git
 cd gitlab
-
-# Review and customize
 cp .env.example .env
-# Edit .env with your external_url, version pins, secrets, etc.
-
+# Edit version pins and secrets
+docker compose config
 docker compose up -d
 ```
 
-See `docs/architecture.md`, the Compose file comments, and `stack/` for production recommendations (backups, HTTPS/TLS, resource limits, profiles, external Postgres/Redis, etc.).
+**Note:** Until `ghcr.io/xgic/xgic-gitlab` publishes tagged releases, build locally from [gitlab-dev](https://github.com/xgic/gitlab-dev) and set `XGIC_GITLAB_IMAGE` / `XGIC_GITLAB_TAG` in `.env`.
 
-The GHCR image for v1.0.0: `ghcr.io/xgic/gitlab/gitlab-ee:v1.0.0` (and semver tags).
+### GitLab Enterprise Edition licensing (self-managed)
 
-**Important**: GitLab EE requires a valid license for production use. The Apache 2.0 license in this repository covers only the orchestration definitions and does not grant rights to GitLab EE itself.
+This template runs the official **GitLab Enterprise Edition** container image under GitLab’s **Self-Managed** deployment model—software you host and operate (for example on-premises or in your own cloud account), not GitLab.com SaaS.
+
+**Free tier for self-managed EE.** GitLab EE can be operated **without a paid subscription**. The free (Core) tier of self-managed EE provides a generous set of capabilities for private projects and internal DevSecOps platforms: source control, CI/CD, issues and planning basics, and related collaboration features, subject to GitLab’s published free-tier limits. That combination is well suited to private organizational instances, labs, and production-ready foundations that may later grow in scale or compliance needs.
+
+**Why EE (not Community Edition) for XGIC-oriented stacks.** Standardizing on the official EE image from day one:
+
+- Keeps private projects on a modern, enterprise-aligned product line while remaining free to start  
+- Avoids a later CE → EE migration when advanced security, compliance, or scale features are required  
+- Supports a clean commercial path: apply a **Premium** or **Ultimate** self-managed subscription to the same EE instance when the organization is ready  
+
+Always confirm current feature sets and commercial terms on GitLab’s Self-Managed pricing page:
+
+https://about.gitlab.com/pricing/?deployment=self-managed-deployment
+
+**This repository’s license.** The **Apache License 2.0** in this project applies only to XGIC orchestration definitions (Docker Compose, configuration examples, documentation, and related automation). It does **not** license GitLab EE software. Use of the `gitlab/gitlab-ee` image is governed by GitLab’s own terms for self-managed deployments.
 
 ## Repository Structure (High-Level)
 
@@ -61,7 +72,7 @@ The GHCR image for v1.0.0: `ghcr.io/xgic/gitlab/gitlab-ee:v1.0.0` (and semver ta
 │   ├── dependabot.yml
 │   ├── ISSUE_TEMPLATE/
 │   ├── PULL_REQUEST_TEMPLATE.md
-│   └── workflows/          # Build + release to GHCR
+│   └── workflows/          # Template CI notes (image build in gitlab-dev)
 ├── config/                 # Example gitlab.rb, templates
 ├── docs/
 │   ├── architecture.md
@@ -88,7 +99,7 @@ A formal verification of suitability for the supported production and educationa
 - [docs/LICENSE-VERIFICATION.md](docs/LICENSE-VERIFICATION.md)
 
 **Status**: Verified (see document for scope, caveats, and user responsibilities).  
-**Note:** Apache-2.0 covers this repository's orchestration definitions only; it does not grant rights to GitLab EE itself.
+**Note:** Apache-2.0 covers this repository’s orchestration definitions only. The official GitLab EE image is governed by GitLab’s **Self-Managed** licensing (free tier with limits, or paid Premium/Ultimate). See [Self-Managed pricing](https://about.gitlab.com/pricing/?deployment=self-managed-deployment) and the licensing section above.
 
 
 ## Contributing

@@ -1,0 +1,89 @@
+# Validate the template Compose stack (consumer). Image build/publish is in xgic/gitlab-dev.
+name: Validate Compose
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-compose-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate-compose:
+    name: validate-compose
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Compose plugin (ensure present)
+        run: docker compose version
+
+      - name: Materialize example environment
+        run: |
+          test -f .env.example
+          cp .env.example .env
+
+      - name: Validate Compose configuration
+        run: docker compose -f docker-compose.yml --env-file .env config --quiet
+
+      - name: Assert required services
+        run: |
+          set -euo pipefail
+          mapfile -t services < <(docker compose -f docker-compose.yml --env-file .env config --services | sort)
+          required=(gitlab-ee postgres redis xgic-gitlab)
+          missing=()
+          for s in "${required[@]}"; do
+            found=0
+            for actual in "${services[@]}"; do
+              if [[ "$actual" == "$s" ]]; then
+                found=1
+                break
+              fi
+            done
+            if [[ "$found" -ne 1 ]]; then
+              missing+=("$s")
+            fi
+          done
+          if [[ "${#missing[@]}" -gt 0 ]]; then
+            echo "Missing required service(s): ${missing[*]}"
+            echo "Present services: ${services[*]}"
+            exit 1
+          fi
+          echo "Required services present: ${required[*]}"
+
+      - name: Assert primary orchestration starts independently
+        run: |
+          set -euo pipefail
+          # xgic-gitlab must not wait on gitlab-ee / postgres / redis so ops stay available.
+          deps="$(docker compose -f docker-compose.yml --env-file .env config --format json \
+            | jq -r '
+              .services["xgic-gitlab"].depends_on // empty
+              | if type == "object" then keys[]
+                elif type == "array" then .[]
+                else empty end
+              ')"
+          if [[ -n "${deps// }" ]]; then
+            echo "xgic-gitlab must not declare depends_on (found: $deps)"
+            exit 1
+          fi
+          echo "xgic-gitlab has no depends_on (starts first)"
+
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo "## Validate Compose"
+            echo ""
+            echo "- Config: \`docker compose config\`"
+            echo "- Required services: xgic-gitlab, gitlab-ee, postgres, redis"
+            echo "- Primary service independence: xgic-gitlab has no depends_on"
+          } >> "$GITHUB_STEP_SUMMARY"
