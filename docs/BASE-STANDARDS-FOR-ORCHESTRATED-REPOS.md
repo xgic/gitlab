@@ -10,27 +10,41 @@ Public exemplary repos (such as this one) receive this sanitized subset. Emphasi
 
 ## Hard Security Rule (Non-Negotiable — Zero Exposure)
 
-**Zero exposure (absolute)**: No mentions, names, details, architectures, experiments, timelines, strategies, links, or any information that would reveal the existence, identity, or structure of any private repositories or private coordination hubs may ever be placed in any public XGIC repository (this repo or any other public one). This includes documentation, prompts, code, issues, PRs, READMEs, or any Grok output.
+**Zero exposure (absolute)**: No mentions, names, details, architectures, experiments, timelines, strategies, links, or any information that would reveal the existence, identity, or structure of any private repositories or private coordination hubs may ever be placed in any public XGIC repository (this repo or any other public one). This includes documentation, prompts, code, issues, **PR/issue/Discussion bodies and comments**, READMEs, commits, or any agent output destined for public artifacts.
 
-All detailed coordination, private project work, and anything involving private repos or sensitive strategy lives *exclusively* in the authoritative private AI orchestration repository.
+All detailed coordination, private project work, and anything involving private repos or sensitive strategy lives *exclusively* in the authoritative private orchestration hub (org members only).
 
-Public repositories and public sessions must remain completely silent on private details and structures. Only the most abstract high-level references are permissible when essential ("private project coordination and full details live in the private XGIC Foundation repository").
+Public repositories and public sessions must remain completely silent on private details and structures. Only the most abstract high-level references are permissible when essential: “Private portfolio coordination is tracked only in the private XGIC Foundation (org members only).”
 
-Violations are treated as security incidents. Human review is mandatory to prevent leakage.
+**Do not** spell real private hostnames, private tracker paths, or private work-item URLs—even as “forbidden examples”—on public surfaces.
+
+Violations are treated as security incidents: sanitize the public text immediately; coordinate any residual detail only in private.
 
 ## Mandatory Sanitization Rule (Non-Negotiable — Core of Hard Security)
 
-**Never include private GitLab issue numbers (e.g. #5, #2), private URLs (e.g. gitlab.xorengames.com), private repo paths, or direct links to private issues/MRs in any public file, source comment, commit message, PR body, issue, changelog, or artifact.**
+**Never include** any of the following in public files, source comments, commit messages, PR/issue/Discussion bodies, reviews, or changelogs:
 
-- Replace with high-level text.
-- Good examples:
-  - "coordinating the GitLab migration effort"
-  - "public exemplary launches"
-  - "High-level coordination for the GitLab migration effort and public exemplary launches"
-- Reference only public GitHub issues/PRs from *this repository*.
-- Add explicit "Sanitization" checklist item to PR/issue templates and playbooks.
-- Enforce via pre-change verification, human review, and periodic leak scans (grep for #\d+ in coordination contexts, private domains).
-- Violations must be corrected immediately.
+- Private hosts or internal URLs
+- Private tracker paths, work-item links, or private project issue/MR URLs
+- Private tracker IDs or project-qualified shorthand that only resolve on private systems
+- Private local filesystem paths as required documentation
+
+Replace with high-level text only. Good examples:
+
+- “coordinating the GitLab stack effort”
+- “public exemplary launches”
+- “Private portfolio coordination is tracked only in the private XGIC Foundation (org members only).”
+
+Cross-repo links on public GitHub use full `https://github.com/xgic/...` URLs only. Same-repo short refs (`#N`) are fine within this public repository.
+
+**Pre-publish checklist** (every public PR/issue body, comment, and commit message):
+
+1. No private hosts / internal URLs  
+2. No private tracker IDs or private work-item links  
+3. No private local paths  
+4. Labels applied  
+
+Enforce via agent session checklist, PR templates, human review, and periodic org-wide leak scans. Violations must be corrected immediately.
 
 ---
 
