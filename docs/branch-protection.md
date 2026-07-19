@@ -1,6 +1,6 @@
 # Branch Protection Policy (main)
 
-**Purpose**: Protect `main` as the single source of truth. This enforces the project's commitment to GitHub Flow, human review gates, Conventional Commits, clean history, and security boundaries for the public exemplary GitLab EE production stack.
+**Purpose**: Protect `main` as the single source of truth. This enforces the project's commitment to GitHub Flow, review gates, Conventional Commits, clean history, and security boundaries for the public exemplary GitLab EE production stack.
 
 This aligns with the base standards in [docs/BASE-STANDARDS-FOR-ORCHESTRATED-REPOS.md](BASE-STANDARDS-FOR-ORCHESTRATED-REPOS.md), [AGENTS.md](../AGENTS.md), and [.github/CONTRIBUTING.md](../.github/CONTRIBUTING.md).
 
@@ -46,7 +46,7 @@ Test the flow:
 1. Create feature branch from main.
 2. Make atomic change + Conventional Commit.
 3. Push and open PR.
-4. Obtain the required review (human LGTM).
+4. Obtain the required review (LGTM).
 5. Merge (using rebase or squash to preserve linear history).
 
 **Squash rule for related changes**: When a high number of small related changes are made (e.g. multiple coordinated doc updates), squash them into one fully detailed Conventional Commit that documents all modifications. Unrelated changes must use separate PRs.
@@ -57,10 +57,10 @@ The current protection (ruleset "main-protection-with-owner-bypass" with PR revi
 
 - Issues #7 (Rule Clarification: squash related small changes into one detailed Conventional Commit) and #8 (Enhance branch protection: enforce required status checks).
 - PR #9: Implemented the squash rule via a single squashed Conventional Commit for related doc updates across key files.
-- PR #10: Propagated the full current rules (2026-06-24) — hard security, human review gate (full/short form), @username attribution, xde standard (no Makefiles), professional tone, platform-native drafting + gh creation after LGTM, full artifacts (@xgic assignments, labels, milestones for major), high-level ruleset documentation only.
+- PR #10: Propagated the full current rules (2026-06-24) — hard security, review gate (full/short form), @username attribution, xde standard (no Makefiles), professional tone, platform-native drafting + gh creation after LGTM, full artifacts (@xgic assignments, labels, milestones for major), high-level ruleset documentation only.
 - PR #11: Implemented mandatory session status reports using exact Session ID "XGIC GitLab", `.xgic/grok-build/status-report.md` (with public template), updates to AGENTS.md / BASE-STANDARDS + .gitignore.
 
-All changes followed strict GitHub Flow, short-lived branches, detailed Conventional Commits, positive framing, and the mandatory human review gate. Human performed review and approval in the GitHub web UI prior to merge. High-level coordination references used for the GitLab migration effort and public exemplary launches.
+All changes followed strict GitHub Flow, short-lived branches, detailed Conventional Commits, positive framing, and the mandatory review gate. Review and approval were performed in the GitHub web UI prior to merge. High-level coordination references used for the GitLab migration effort and public exemplary launches.
 
 See also:
 - [orchestration-workflow.md](orchestration-workflow.md)

@@ -4,7 +4,7 @@
 
 Public exemplary repos (such as this one) receive this sanitized subset. Emphasis is on exemplary open-source process, agent ergonomics, living guides, external-contributor simulation, xde standard, and strict adherence to security boundaries.
 
-**Last major update**: 2026 — Public variant established for GitLab exemplary and future public launches. Added emphasis on human review gate, platform tracking, Conventional Commits, xde (no Makefiles), and zero private leakage.
+**Last major update**: 2026 — Public variant established for GitLab exemplary and future public launches. Added emphasis on review gate, platform tracking, Conventional Commits, xde (no Makefiles), and zero private leakage.
 
 ---
 
@@ -40,21 +40,21 @@ Public project artifacts should describe the public change only. Prefer silence 
 4. No rule restatement in project artifacts  
 5. Labels applied  
 
-Enforce via agent session checklist, PR templates, human review, and periodic org-wide leak scans. Violations must be corrected immediately.
+Enforce via agent session checklist, PR templates, review, and periodic org-wide leak scans. Violations must be corrected immediately.
 
 ---
 
-## Mandatory Human Review Gate Before Main (Beta-Era Rule)
+## Mandatory Review Gate Before Main (Beta-Era Rule)
 
-**While Grok Build is in beta, every change must receive at least one explicit human code review and approval before it is pushed or merged to the primary branch (main).**
+**While Grok Build is in beta, every change must receive at least one explicit code review and approval before it is pushed or merged to the primary branch (main).**
 
 - "Code review" includes docs, AGENTS.md, playbooks, scripts, stack definitions, CI, and source.
-- The human must inspect the proposal/diff, run verification steps (lint where applicable, stack validation, security/leakage scan, manual read for tone and boundaries), and give explicit approval (LGTM comment, PR approval, or recorded note) **before** any push or merge to main.
+- The reviewer must inspect the proposal/diff, run verification steps (lint where applicable, stack validation, security/leakage scan, manual read for tone and boundaries), and give explicit approval (LGTM comment, PR approval, or recorded note) **before** any push or merge to main.
 - For public exemplary repos: real PR + approval(s), consistent with the external-contributor-simulation model.
 - Enforcement: branch protection (≥1 required reviews, no direct main pushes, linear history), PR templates, AGENTS.md, and this base set.
-- Grok always produces clean professional draft artifacts and pauses for approval after every remote action proposal. The human review gate policy is documented in AGENTS.md and this document.
-- **Mandatory human code review in platform UI**: All Pull Requests must undergo explicit human code review performed directly in the GitHub web interface. Grok prepares drafts but never approves or merges its own work.
-- **Attribution**: Use actual usernames when describing specific human actions performed in the platform.
+- Grok always produces clean professional draft artifacts and pauses for approval after every remote action proposal. The review gate policy is documented in AGENTS.md and this document.
+- **Mandatory code review in platform UI**: All Pull Requests must undergo explicit code review performed directly in the GitHub web interface. Grok prepares drafts but never approves or merges its own work.
+- **Attribution**: Use actual usernames when describing specific actions performed in the platform.
 
 This rule strengthens oversight and pure flow requirements.
 
@@ -71,13 +71,13 @@ Every public exemplary orchestrated repo must have (at minimum) the following:
    - Strict GitHub Flow.
    - `main` is always the stable single source of truth.
    - All work on short-lived branches. Integration exclusively via Pull Requests.
-   - Merge only after required human review(s) + all automated checks pass.
+   - Merge only after required review(s) + all automated checks pass.
    - Branch protection on `main`.
 3. **Standard labels and templates**:
    - Consistent labels for type, priority, status, area, review.
    - `.github/ISSUE_TEMPLATE/` and `PULL_REQUEST_TEMPLATE.md` with standard fields and practical checklists. Do not restate rules or gate procedures (see AGENTS.md and BASE-STANDARDS-FOR-ORCHESTRATED-REPOS.md for centralized rules).
-4. **The human review gate** (documented in CONTRIBUTING.md + AGENTS.md).
-5. **Root project instruction file**: `AGENTS.md` (contains collaboration principles, session startup checklist, hard security rule, human review gate, commit expectations, xde standard, and references to base standards / playbooks).
+4. **The review gate** (documented in CONTRIBUTING.md + AGENTS.md).
+5. **Root project instruction file**: `AGENTS.md` (contains collaboration principles, session startup checklist, hard security rule, review gate, commit expectations, xde standard, and references to base standards / playbooks).
 6. **CONTRIBUTING.md** (placed at `.github/CONTRIBUTING.md`): Covers GitHub Flow, AI/Grok usage, tone, commit discipline, and base set expectations. Do not restate review gates or procedures from AGENTS.md / BASE-STANDARDS in templates or CONTRIBUTING (centralized in AGENTS.md and this document).
 7. **README.md**: Purpose, quick start (including xde / Compose usage), security note, high-level status, and links back to coordination.
 8. **docs/ skeleton** (minimum):
@@ -106,7 +106,7 @@ Every public exemplary orchestrated repo must have (at minimum) the following:
     - Linting/verification + docs updates in same commit where relevant.
     - Positive, constructive, forward-looking framing.
     - **Squash related small changes**: When a high number of small related changes are made, squash them into one fully detailed Conventional Commit that documents all modifications. This rule does not apply to completely unrelated changes, which must be submitted in separate merge requests or pull requests.
-    - **Initial commits in bootstraps**: Must be preceded by a platform tracking issue describing the bootstrap. The commit message must clearly identify it as the "Initial commit", state the project name and purpose, list the key files and structure introduced, describe the setup (base set, standards, xde, etc.), reference the issue, and use positive framing. Grok drafts; explicit human LGTM before committing. **Review and approval required before any remote action or merge to main.**
+    - **Initial commits in bootstraps**: Must be preceded by a platform tracking issue describing the bootstrap. The commit message must clearly identify it as the "Initial commit", state the project name and purpose, list the key files and structure introduced, describe the setup (base set, standards, xde, etc.), reference the issue, and use positive framing. Grok drafts; explicit LGTM before committing. **Review and approval required before any remote action or merge to main.**
 12. **xde as the standard for container / environment orchestration tasks (no Makefiles)**:
     - `xde` is the preferred single interface.
     - No Makefiles or legacy make targets.
@@ -115,15 +115,15 @@ Every public exemplary orchestrated repo must have (at minimum) the following:
 13. **Grok usage rules**:
     - For coordination, multi-repo, strategy, or boundary work: always restate the full Hard Security Rule.
     - Use clean professional draft issues/PRs. Do not embed gate or review procedure language in templates; refer to AGENTS.md and BASE-STANDARDS-FOR-ORCHESTRATED-REPOS.md.
-    - Mandatory human verification/approval on every remote action and before anything lands on main.
-    - All PRs require human code review in the GitHub interface.
+    - Mandatory review and approval on every remote action and before anything lands on main.
+    - All PRs require code review in the GitHub interface.
     - Update AGENTS.md and playbooks as part of relevant changes.
     - **Documentation Professionalism**: Use professional language only. Avoid labels like "**Positive update:**". Do not reference ruleset bypass details unless the changes specifically target the rulesets.
-    - **Platform-native tracking**: Draft issues/PRs fully in Grok (complete body with context, plan, checklists, exact gate sentence), receive explicit human LGTM, then create using native tools (gh after search_tool for MCP schemas if used). Local lightweight files are for high-level distillation only.
+    - **Platform-native tracking**: Draft issues/PRs fully in Grok (complete body with context, plan, checklists, exact gate sentence), receive explicit LGTM, then create using native tools (gh after search_tool for MCP schemas if used). Local lightweight files are for high-level distillation only.
     - **Full Artifacts**: Include assignments (e.g. @xgic), consistent labels (type/, priority/, status/, area/, review/, grok/), milestones (for releases, major/epics/coordinated work; not for all small items).
     - Reference high-level coordination for the GitLab migration effort and public exemplary launches from artifacts where relevant.
 
-- **Milestones**: Create draft milestones for releases, major work, epics, or coordinated efforts per platform best practices and semantic versioning. Every release must pass tests, receive approvals, include completed professional artifacts. Human LGTM before remote creation.
+- **Milestones**: Create draft milestones for releases, major work, epics, or coordinated efforts per platform best practices and semantic versioning. Every release must pass tests, receive approvals, include completed professional artifacts. LGTM before remote creation.
 
 ---
 
@@ -143,10 +143,10 @@ New public exemplary repo bootstrap (high-level):
 4. Add AGENTS.md (security rule, review gate, xde standard, links to playbooks).
 5. Add xde direction (no Makefiles) in workflow and CONTRIBUTING.
 6. Add memory triad and grok-playbooks skeleton.
-7. Human review of the initial base set.
+7. Review of the initial base set.
 8. Record at high level in coordination trackers and link issues for the GitLab migration effort and public exemplary launches.
 
-Enforcement via human gates, branch protection, PR templates, and periodic review.
+Enforcement via review gates, branch protection, PR templates, and periodic review.
 
 When patterns evolve, the base standards are updated first; downstream public exemplary repos adopt via normal PR process.
 

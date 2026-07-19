@@ -109,7 +109,7 @@ Please read:
 - [CONTRIBUTING.md](CONTRIBUTING.md)
 - [docs/orchestration-workflow.md](docs/orchestration-workflow.md)
 
-Follow GitHub Flow, Conventional Commits, the human review gate, and positive framing at all times.
+Follow GitHub Flow, Conventional Commits, the review gate, and positive framing at all times.
 
 
 

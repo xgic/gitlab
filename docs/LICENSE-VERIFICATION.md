@@ -63,7 +63,7 @@ References for common practice (publicly available):
 The Apache 2.0 license currently in the root of the repository is the correct choice and fully supports the mission of this public exemplary repository.
 
 **This verification gate is satisfied for the purposes of preparing the initial public release and GHCR publishing**, subject to:
-- Final human review and explicit approval of this document and the overall bootstrap.
+- Final review and explicit approval of this document and the overall bootstrap.
 - Successful first stable production-ready release.
 - Confirmation of GitLab EE image usage compliance in the target environments.
 
