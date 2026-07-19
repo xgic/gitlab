@@ -17,7 +17,7 @@ All work uses positive framing and follows the Hard Security Rule.
 5. Perform initial sanitization/leak audit (grep for private refs like coordination issue numbers, private domains).
 6. For container work: `xde --help` / `xde check` (or equivalent)
 7. Inspect current stack: `docker compose config`
-8. Summarize state to the human before proposing actions.
+8. Summarize state to the operator before proposing actions.
 
 ---
 
@@ -75,7 +75,7 @@ Never use unpinned "latest" in production definitions.
 - License verification gate documented.
 - All artifacts follow sanitization: use only high-level references for the GitLab migration effort and public exemplary launches.
 - Detailed initial commit message.
-- Explicit human LGTM before commit and before any remote.
+- Explicit LGTM before commit and before any remote.
 
 ## Playbook: Sanitization (Mandatory Before Every Change)
 

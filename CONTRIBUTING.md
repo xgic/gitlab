@@ -48,8 +48,8 @@ All contributions use constructive, forward-looking language.
 - `main` is the single source of truth and is always stable.
 - All work occurs on short-lived feature branches.
 - Changes are integrated exclusively via Pull Requests.
-- Branch protection requires at least one human approval + passing automated checks before merge.
-- Follow the mandatory human review gate before any remote action or merge to main — see AGENTS.md and BASE-STANDARDS-FOR-ORCHESTRATED-REPOS.md.
+- Branch protection requires at least one approval + passing automated checks before merge.
+- Follow the mandatory review gate before any remote action or merge to main — see AGENTS.md and BASE-STANDARDS-FOR-ORCHESTRATED-REPOS.md.
 
 ## Commit Message Convention
 
@@ -73,7 +73,7 @@ High-level coordination references (descriptive text only)
 - Include relevant issue references.
 - Keep commits atomic and complete (full change + tests/verification + docs).
 
-**Bootstrap / initial commits**: Must follow the rules in `docs/BASE-STANDARDS-FOR-ORCHESTRATED-REPOS.md`. A platform tracking issue is created first. The commit message describes the full setup, references the issue, and uses positive framing. Human LGTM is required before the commit.
+**Bootstrap / initial commits**: Must follow the rules in `docs/BASE-STANDARDS-FOR-ORCHESTRATED-REPOS.md`. A platform tracking issue is created first. The commit message describes the full setup, references the issue, and uses positive framing. LGTM is required before the commit.
 
 - **Attribution**: Use actual @username for specific platform actions in docs/PRs/issues.
 - Use professional language. Avoid labels like "**Positive update:**". Do not reference ruleset bypass details unless targeting rulesets.
@@ -86,7 +86,7 @@ High-level coordination references (descriptive text only)
 3. Ensure the PR body contains the gate sentence where required for AI-assisted work.
 4. Link related issues (e.g. "Refs #123" or high-level coordination reference using descriptive text only).
 5. All checks must pass.
-6. Request review. A human must approve in the GitHub UI before merge.
+6. Request review. A reviewer must approve in the GitHub UI before merge.
 7. Rebase or merge main as needed for a clean history.
 
 ## For AI Coding Assistants (Grok Build)
@@ -99,8 +99,8 @@ This is a public exemplary repository. All work follows the external-contributor
 - Use `xde` for container/environment tasks. No Makefiles.
 - Produce clean professional drafts only. Every draft issue or PR body must contain the exact sentence:
   > Review and approval required before any remote action or merge to main.
-- Never perform remote actions (branch, issue, PR, push) without prior explicit human LGTM in this conversation or platform.
-- All PRs require human code review performed in the GitHub web interface.
+- Never perform remote actions (branch, issue, PR, push) without prior explicit LGTM in this conversation or platform.
+- All PRs require code review performed in the GitHub web interface.
 - Reference high-level coordination for the GitLab migration effort and public exemplary launches (using descriptive text only per sanitization rule) from relevant artifacts.
 - Perform sanitization verification on every contribution: no private coordination numbers or links.
 - Follow Conventional Commits, positive framing, and update AGENTS.md + playbooks when the mental model or process changes.

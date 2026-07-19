@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Changed
+
+- Gate language: remove “Human” prefix; use **Review and approval required before any remote action or merge to main** consistently across AGENTS, CONTRIBUTING, BASE-STANDARDS, and related docs.
+
 ## [1.0.0] - 2026-06-24
 
 ### Added
@@ -14,7 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - CI/CD for GHCR image builds (multi-platform).
 - Branch protection via ruleset (PR + code owners + linear history + status checks).
 - Documentation for production recommendations (resources, backups, HTTPS, profiles).
-- Rule clarifications for squash commits, human review gate, professionalism.
+- Rule clarifications for squash commits, review gate, professionalism.
 - Attribution and platform-native tracking requirements.
 
 ### Changed
@@ -28,4 +34,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Milestone: https://github.com/xgic/gitlab/milestone/1
 - High-level coordination for the GitLab migration effort and public exemplary launches.
 
-Follow the mandatory human review gate before any remote action or merge to main — see AGENTS.md and BASE-STANDARDS-FOR-ORCHESTRATED-REPOS.md.
+Follow the mandatory review gate before any remote action or merge to main — see AGENTS.md and BASE-STANDARDS-FOR-ORCHESTRATED-REPOS.md.

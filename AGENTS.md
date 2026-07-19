@@ -22,7 +22,7 @@ These principles have been established to maximize effectiveness and maintain a 
   - Detailed commit messages for initial/bootstrap commits: describe files introduced, setup, and reference the platform tracking issue.
   - Clean history before pushing or merging to main (interactive rebase/squash where appropriate).
   - **Squash related small changes**: When a high number of small related changes are made, squash them into one fully detailed Conventional Commit that documents all modifications. This rule does not apply to completely unrelated changes, which must be submitted in separate merge requests or pull requests.
-  - **Mandatory human review gate**: No push or merge to `main` without explicit human verification and approval. See the human review gate section.
+  - **Mandatory review gate**: No push or merge to `main` without explicit review and approval. See the review gate section.
   - I have autonomy to prepare branches and commits locally following these guidelines.
 
 - **xde is the standard for container and environment tasks.** No Makefiles are created or used. Use `xde` (or direct equivalent patterns) for Docker, Compose, environment validation, and related orchestration. Generalizations are contributed back to the xde library.
@@ -38,7 +38,7 @@ These principles have been established to maximize effectiveness and maintain a 
   - Respond to "session status report" / "generate status report" (or equivalent triggers) by writing `.xgic/grok-build/status-report.md` using the project's public status-report template.
   - `.xgic/` must be in `.gitignore` (never commit Grok Build status reports or local coordination artifacts).
 
-- **Attribution**: When describing specific human actions performed in the GitHub platform (e.g., merge, approval, review), use the actual username (e.g., "merged by @xgic via GitHub web UI").
+- **Attribution**: When describing specific actions performed in the GitHub platform (e.g., merge, approval, review), use the actual username (e.g., "merged by @xgic via GitHub web UI").
 
 These principles take precedence. When in doubt, refer back to this section.
 
@@ -74,7 +74,7 @@ All detailed coordination, private project work, GitLab experiments, and anythin
 **Enforcement**:
 - Public repositories and public sessions must remain completely silent on private details and structures.
 - High-level statements are allowed only in the most abstract form when necessary.
-- Human review of any proposed public content is required to prevent leakage.
+- Review of any proposed public content is required to prevent leakage.
 - Violations are treated as security incidents and must be corrected immediately.
 
 ## Mandatory Sanitization Rule (Core Security Practice)
@@ -107,7 +107,7 @@ At the beginning of almost every session, gather this context:
 6. `xde --help` (or python -m equivalent) and `xde check` / environment validation when container work is involved.
 7. Review current `docker-compose.yml` (or stack definition) and `.env.example`.
 
-Output a short summary of the environment and repo state to the human before proposing actions.
+Output a short summary of the environment and repo state to the operator before proposing actions.
 
 ---
 
@@ -145,14 +145,14 @@ Key invariants for agents:
 4. Update docs, AGENTS.md, and playbooks as needed.
 5. Produce atomic Conventional Commits.
 6. Draft PR using the template (includes explicit gate language).
-7. Human verification + approval required before merge to main.
+7. Review and approval required before any remote action or merge to main.
 
 ### Workflow C: Bootstrap / major structure work (this repo)
 Follow BASE-STANDARDS and this playbook:
 - Create (or reference) the platform coordination issue first.
 - Detailed commit message describing files/setup.
 - Reference high-level coordination for the GitLab migration effort and public exemplary launches (never private issue numbers).
-- Human LGTM required before any commit that lands on main and before any remote action.
+- LGTM required before any commit that lands on main and before any remote action.
 - All drafts carry: "Review and approval required before any remote action or merge to main."
 
 ---
@@ -192,18 +192,18 @@ See `docs/orchestration-workflow.md` and the xde reference in the sibling xde pr
 - For destructive operations, always surface the plan and get explicit confirmation.
 - Draft issues and PRs as clean professional artifacts carrying the explicit gate sentence.
 - Keep `AGENTS.md` updated.
-- All remote actions (branch create via tools, issue/PR creation, pushes) require prior human verification and LGTM.
+- All remote actions (branch create via tools, issue/PR creation, pushes) require prior review and LGTM.
 
 **Preferred workflow for issues, PRs, docs, and planning**:
 - Early ideation: lightweight notes if needed.
 - Ready for sharing: draft the complete Markdown body here first.
 - After explicit review and LGTM: proceed to platform creation (with gate language embedded).
-- All merges require human platform review + approval.
+- All merges require platform review and approval.
 
 **Full Artifact Requirements (Platform-native)**:
 - Use assignments (e.g., @xgic), consistent labels (type/, priority/, status/, area/, review/, grok/), milestones (for releases, major/epics/coordinated work — not for all small changes).
 - Drafts must carry the exact gate sentence where relevant.
-- Human performs review/approval in the GitHub web UI.
+- Reviewers perform review/approval in the GitHub web UI.
 
 ---
 

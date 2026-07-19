@@ -42,7 +42,7 @@ The stack supports:
 - Security-first: least-privilege volumes, networks, and GitLab settings.
 - The license of this repo covers only the definitions and helpers.
 - Full compliance with the Hard Security Rule — zero private leakage.
-- All changes go through GitHub Flow + human review gate.
+- All changes go through GitHub Flow + review gate.
 
 ## Coordination
 
