@@ -83,7 +83,7 @@ services:
       POSTGRES_USER: ${POSTGRES_USER:-gitlab}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-CHANGE_ME_STRONG}
     volumes:
-      - ${POSTGRES_DATA_DIR:-./postgres-data}:/var/lib/postgresql/data
+      - ${POSTGRES_DATA_DIR:-./postgres-data}:/var/lib/postgresql
     healthcheck:
       test:
         [
@@ -109,3 +109,4 @@ services:
 networks:
   default:
     name: xgic-gitlab-net
+
