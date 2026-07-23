@@ -75,7 +75,7 @@ services:
     shm_size: "256m"
 
   postgres:
-    image: postgres:${POSTGRES_VERSION:-18}
+    image: postgres:${POSTGRES_VERSION:-17}
     container_name: gitlab-postgres
     restart: unless-stopped
     environment:
