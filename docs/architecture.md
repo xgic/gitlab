@@ -15,13 +15,14 @@ The stack supports:
 
 1. **Base Images (Official)**
    - `gitlab/gitlab-ee:<pin>-ee.0`
-   - `postgres:<pin>`
+   - `postgres:<pin>` — **latest major supported by that GitLab EE major** (default **17** for EE 18.x)
    - Supporting (redis etc.)
 
 2. **Orchestration Layer**
    - `docker-compose.yml` + `.env` / `.env.example`
    - Version pinning and profiles for different environments
    - External PostgreSQL (and optional Redis) for production scalability
+   - PostgreSQL pin follows GitLab’s published support matrix (max supported major), revalidated when EE upgrades
 
 3. **Configuration Layer**
    - `config/` templates (e.g. gitlab.rb snippets)

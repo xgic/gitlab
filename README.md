@@ -10,7 +10,7 @@
 |---------|--------|
 | XGIC orchestration (starts **first**) | `ghcr.io/xgic/xgic-gitlab` ([built by gitlab-dev](https://github.com/xgic/gitlab-dev)) |
 | GitLab EE | Official `gitlab/gitlab-ee` (unaltered) |
-| PostgreSQL | Official `postgres:18` |
+| PostgreSQL | Official `postgres` — **latest major supported by the pinned GitLab EE** (default **17** for GitLab EE 18.x) |
 | Redis | Official `redis:8.8` |
 
 Architecture: [ADR-0001](https://github.com/xgic/ai/blob/main/docs/adr/0001-xgic-gitlab-architecture-and-repository-naming.md).  
@@ -30,6 +30,17 @@ Standards: [xgic/ai](https://github.com/xgic/ai).
 - XGIC orchestration container for ops/health (primary Compose service)
 - Configuration via `.env` (no hard-coded private hosts)
 - Apache-2.0 for orchestration definitions only (does not license GitLab EE software)
+
+## PostgreSQL version policy
+
+XGIC standard: pin **the latest stable PostgreSQL major that GitLab EE supports for your EE major**—not an older minimum-only pin—so stacks stay current and avoid avoidable upgrade debt.
+
+| GitLab EE major | PostgreSQL major (XGIC default) |
+|-----------------|----------------------------------|
+| **18.x** | **17** |
+| **19.x** | **17** (per GitLab 19.x requirements) |
+
+Set `POSTGRES_VERSION` in `.env` (see `.env.example`). Confirm the pair against [GitLab installation requirements — PostgreSQL](https://docs.gitlab.com/install/requirements/#postgresql) whenever you change `GITLAB_VERSION`. After changing either pin, validate with an official `gitlab-backup create` and confirm the **database dump completes successfully**.
 
 ## Quick start
 
