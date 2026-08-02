@@ -256,3 +256,7 @@ docker compose config   # validation only
 This document exists to help agents deliver reliable, secure, and exemplary GitLab orchestration while protecting boundaries and following disciplined processes.
 
 Thank you for helping build excellent public examples.
+
+
+**Public GitHub writes:** Before `gh issue create|edit`, `gh pr create|edit`, or any public comment on this repository, complete the **mandatory public-safe draft gate** in https://github.com/xgic/ai/blob/main/docs/BASE-STANDARDS-FOR-ORCHESTRATED-REPOS.md (fictional placeholders only; never name private hosts, private projects, or private tracker IDs). Optional helper from the hub clone: `python scripts/public-safe-scan.py path/to/draft.md`.
+
