@@ -53,7 +53,7 @@ docker compose config
 docker compose up -d
 ```
 
-**Note:** Until `ghcr.io/xgic/xgic-gitlab` publishes tagged releases, build locally from [gitlab-dev](https://github.com/xgic/gitlab-dev) and set `XGIC_GITLAB_IMAGE` / `XGIC_GITLAB_TAG` in `.env`.
+**Image pin:** Prefer a **semver** orchestration tag from [gitlab-dev releases](https://github.com/xgic/gitlab-dev/releases) (default in `.env.example`: **`0.1.0`**). Use `latest` only for lab rolling tips. Package: [ghcr.io/xgic/xgic-gitlab](https://github.com/users/xgic/packages/container/package/xgic-gitlab).
 
 ### GitLab Enterprise Edition licensing (self-managed)
 
