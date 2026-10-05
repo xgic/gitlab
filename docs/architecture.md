@@ -23,6 +23,8 @@ The stack supports:
    - Version pinning and profiles for different environments
    - External PostgreSQL (and optional Redis) for production scalability
    - PostgreSQL pin follows GitLab’s published support matrix (max supported major), revalidated when EE upgrades
+   - Operators run `xgic gitlab backup` and `xgic gitlab restore` on the host that already runs Docker Compose for this stack. Service `xgic-gitlab` remains the orchestration companion built by [xgic/gitlab-dev](https://github.com/xgic/gitlab-dev). GitLab EE stays the official image and only runs `gitlab-backup`.
+   - That host reads the GitLab config directory and writes the backup directory this Compose file mounts into GitLab EE.
 
 3. **Configuration Layer**
    - `config/` templates (e.g. gitlab.rb snippets)
