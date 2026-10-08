@@ -201,7 +201,7 @@ See `docs/orchestration-workflow.md` and the xde reference in the sibling xde pr
 - All merges require platform review and approval.
 
 **Full Artifact Requirements (Platform-native)**:
-- Use assignments (e.g., @xgic), consistent labels (type/, priority/, status/, area/, review/, grok/), milestones (for releases, major/epics/coordinated work — not for all small changes).
+- Use assignments (e.g., @xgic) and consistent labels (type/, priority/, status/, area/, review/, grok/). Assign every issue that belongs to an effort to that repository's milestone, including siblings. Leave an issue off a milestone only when its description states why it is unscheduled. The milestone description names the parent issue only.
 - Drafts must carry the exact gate sentence where relevant.
 - Reviewers perform review/approval in the GitHub web UI.
 
