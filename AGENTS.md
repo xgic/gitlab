@@ -201,7 +201,7 @@ See `docs/orchestration-workflow.md` and the xde reference in the sibling xde pr
 - All merges require platform review and approval.
 
 **Full Artifact Requirements (Platform-native)**:
-- Assign `@xgic`. Every issue and pull request gets exactly one type label in the create call: `bug`, `enhancement`, `documentation`, `standards`, or `chore`. Welcome Discussion posts use `welcome` and `documentation`. Do not use `type/`, `priority/`, `status/`, `area/`, `review/`, or `grok` labels. https://github.com/xgic/ai/blob/main/docs/community-health.md#labels-required Milestones are for releases and coordinated work, not for every small change.
+- Assign `@xgic`. Every issue and pull request gets exactly one type label in the create call: `bug`, `enhancement`, `documentation`, `standards`, or `chore`. Welcome Discussion posts use `welcome` and `documentation`. Do not use `type/`, `priority/`, `status/`, `area/`, `review/`, or `grok` labels. https://github.com/xgic/ai/blob/main/docs/community-health.md#labels-required Milestones follow https://github.com/xgic/ai/blob/main/docs/work-tracking-and-checklists.md.
 - Drafts must carry the exact gate sentence where relevant.
 - Reviewers perform review/approval in the GitHub web UI.
 

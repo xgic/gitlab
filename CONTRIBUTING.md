@@ -77,7 +77,7 @@ High-level coordination references (descriptive text only)
 
 - **Attribution**: Use actual @username for specific platform actions in docs/PRs/issues.
 - Use professional language. Avoid labels like "**Positive update:**". Do not reference ruleset bypass details unless targeting rulesets.
-- **Full artifacts**: assignments (@xgic), labels, milestones (for releases/major/epics/coordinated; not all small).
+- **Full artifacts**: assignments (@xgic) and labels. Milestones follow https://github.com/xgic/ai/blob/main/docs/work-tracking-and-checklists.md.
 
 ## Pull Request Guidelines
 
