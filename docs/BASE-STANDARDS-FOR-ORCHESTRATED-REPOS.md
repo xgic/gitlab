@@ -120,10 +120,10 @@ Every public exemplary orchestrated repo must have (at minimum) the following:
     - Update AGENTS.md and playbooks as part of relevant changes.
     - **Documentation Professionalism**: Use professional language only. Avoid labels like "**Positive update:**". Do not reference ruleset bypass details unless the changes specifically target the rulesets.
     - **Platform-native tracking**: Draft issues/PRs fully in Grok (complete body with context, plan, checklists, exact gate sentence), receive explicit LGTM, then create using native tools (gh after search_tool for MCP schemas if used). Local lightweight files are for high-level distillation only.
-    - **Full Artifacts**: Include assignments (e.g. @xgic) and consistent labels (type/, priority/, status/, area/, review/, grok/). Assign every issue that belongs to an effort to that repository's milestone, including siblings. Leave an issue off a milestone only when its description states why it is unscheduled.
+    - **Full Artifacts**: Include assignments (e.g. @xgic). Labels follow https://github.com/xgic/ai/blob/main/docs/community-health.md#labels-required.
     - Reference high-level coordination for the GitLab migration effort and public exemplary launches from artifacts where relevant.
 
-- **Milestones**: Assign every issue that belongs to an effort to that repository's milestone, including siblings. Leave an issue off a milestone only when its description states why it is unscheduled. The milestone description names the parent issue only. Every release must pass tests, receive approvals, and include completed professional artifacts.
+- **Milestones**: Follow https://github.com/xgic/ai/blob/main/docs/work-tracking-and-checklists.md.
 
 ---
 
